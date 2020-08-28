@@ -1213,15 +1213,4 @@ Actions cannot have subresources`
             "Cannot find documentation entry for " + doc + "." + entry
         )
     }
-
-    protected extractOp(el: any, op: string): IOperation | null {
-        if (el.operations) {
-            for (const oper of el.operations) {
-                if (oper.operation === op) {
-                    return oper
-                }
-            }
-        }
-        return null
-    }
 }
