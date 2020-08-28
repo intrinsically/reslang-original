@@ -1,0 +1,239 @@
+{
+  "$id": "https://schemas.liveramp.com/noroot",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "ConfigurationStatus": {
+      "type": "string",
+      "enum": [
+        "DISABLED",
+        "ENABLED",
+        "EXPIRED"
+      ]
+    },
+    "DeviceTriggerRefreshMode": {
+      "type": "object",
+      "properties": {
+        "adNetworkAccountID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "triggerType": {
+          "$ref": "#/definitions/TriggerType",
+          "type": "string"
+        },
+        "refreshMode": {
+          "$ref": "#/definitions/RefreshMode",
+          "type": "string"
+        }
+      },
+      "required": [
+        "adNetworkAccountID",
+        "triggerType",
+        "refreshMode"
+      ]
+    },
+    "DeviceTypeSpecification": {
+      "type": "object",
+      "properties": {
+        "adNetworkAccountID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "precisionLevel": {
+          "$ref": "#/definitions/PrecisionLevel",
+          "type": "string"
+        },
+        "subnetworkIDs": {
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "minItems": 1,
+          "type": "array"
+        }
+      },
+      "required": [
+        "adNetworkAccountID",
+        "precisionLevel",
+        "subnetworkIDs"
+      ]
+    },
+    "PrecisionLevel": {
+      "type": "string",
+      "enum": [
+        "CROSSDEVICE_EXACT",
+        "CROSSDEVICE_PROBABILISTIC_A",
+        "CROSSDEVICE_PROBABILISTIC_B",
+        "CROSSDEVICE_PROBABILISTIC_C",
+        "CROSSDEVICE_PROBABILISTIC_D",
+        "CROSSDEVICE_EXACT_DEPRECATED",
+        "CROSSDEVICE_ENTITY",
+        "CROSSDEVICE_HOUSEHOLD",
+        "WATERFALL_NO_WATERFALLING",
+        "WATERFALL_INDIVIDUAL",
+        "WATERFALL_NAME_AND_POSTAL",
+        "WATERFALL_HOUSEHOLD",
+        "WATERFALL_ZIP_PLUS_SIX",
+        "WATERFALL_NAME_AND_CITY",
+        "WATERFALL_ZIP_PLUS_FOUR",
+        "WATERFALL_ZIP"
+      ]
+    },
+    "EnumFieldValue": {
+      "type": "object",
+      "properties": {
+        "fieldID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "valueID": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "required": [
+        "fieldID",
+        "valueID"
+      ]
+    },
+    "RawField": {
+      "type": "object",
+      "properties": {
+        "fieldID": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "required": [
+        "fieldID"
+      ]
+    },
+    "DataSource": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        }
+      },
+      "discriminator": {
+        "propertyName": "type",
+        "mapping": {
+          "raw": "#/definitions/DataSourceRaw",
+          "enum": "#/definitions/DataSourceEnum"
+        }
+      },
+      "required": [
+        "type",
+        "fieldID",
+        "valueID"
+      ]
+    },
+    "DataSourceRaw": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/DataSource"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "fieldID": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        }
+      ]
+    },
+    "DataSourceEnum": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/DataSource"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "fieldID": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "valueID": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        }
+      ]
+    },
+    "RefreshMode": {
+      "type": "string",
+      "enum": [
+        "FULL",
+        "NET_NEW",
+        "NET_NEW_WITH_PARTIAL"
+      ]
+    },
+    "TriggerType": {
+      "type": "string",
+      "enum": [
+        "DIRECT_REQUEST",
+        "SCHEDULED_REFRESH",
+        "UPDATED_CONFIGURATION",
+        "NEW_DATA",
+        "NEW_IDENTITY_MAPPING"
+      ]
+    },
+    "DeliveryInstanceStatus": {
+      "type": "string",
+      "enum": [
+        "PROCESSING",
+        "FAILED",
+        "COMPLETED"
+      ]
+    },
+    "SegmentDeliveryAttemptStatus": {
+      "type": "string",
+      "enum": [
+        "ACTIVE_PROCESSING",
+        "ACTIVE_DELIVERING",
+        "FAILED_PROCESSING",
+        "FAILED_DELIVERING",
+        "COMPLETED_EMPTY",
+        "COMPLETED_DELIVERY"
+      ]
+    },
+    "SegmentDeliveryAttemptStats": {
+      "type": "object",
+      "properties": {
+        "totalAudienceKeys": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "audienceKeysMatched": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "targetIdentifiersMatched": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "targetIdentifiersDelivered": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "required": [
+        "totalAudienceKeys",
+        "audienceKeysMatched",
+        "targetIdentifiersMatched",
+        "targetIdentifiersDelivered"
+      ]
+    },
+    "SortType": {
+      "type": "string",
+      "enum": [
+        "ASCENDING_TIMESTAMPS",
+        "DESCENDING_TIMESTAMPS"
+      ]
+    }
+  }
+}

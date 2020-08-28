@@ -9,10 +9,33 @@ describe("JSON schema generation tests", () => {
     test.each(allModels)("JSON schema(%s)", (a) => {
         compare(a)
     })
+
+    // test with an actual root
+    test("Structure root", () => {
+        compare(
+            "gendiagram",
+            "SegmentDeliveryAttemptStats",
+            "jsonschema-structure.expected",
+            false
+        )
+    })
+    test("Structure root", () => {
+        compare(
+            "gendiagram",
+            "noroot",
+            "jsonschema-structure-follow.expected",
+            false
+        )
+    })
 })
 
 /** compare the output with saved JSON schema spec */
-function compare(module: string) {
+function compare(
+    module: string,
+    root: string = "noroot",
+    file: string | null = null,
+    followResources = true
+) {
     const schemaGen = new JsonSchemaGen(
         [`models/${module}`],
         { ignoreRules: true },
@@ -22,8 +45,8 @@ function compare(module: string) {
         false,
         false
     )
-    schemaGen.root = "noroot"
-    schemaGen.followResources = true
+    schemaGen.root = root
+    schemaGen.followResources = followResources
 
     let got = ""
     try {
@@ -32,14 +55,11 @@ function compare(module: string) {
         got = "" + err
     }
     const expected = strip(
-        readFile(`models/${module}/testdata/jsonschema.expected`)
+        readFile(`models/${module}/testdata/${file || "jsonschema.expected"}`)
     )
 
     if (got !== expected) {
         console.log(got)
-        console.log("xxxxx")
-        console.log(expected)
-        console.log("yyyyy")
     }
     expect(got).toBe(expected)
 }
