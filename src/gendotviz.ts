@@ -5,7 +5,9 @@ import {
     AnyKind,
     IResourceLike,
     isResourceLike,
-    getAllAttributes
+    getAllAttributes,
+    isProduces,
+    isConsumes
 } from "./treetypes"
 import { BaseGen } from "./genbase"
 
@@ -47,7 +49,7 @@ export default class DotvizGen extends BaseGen {
         ${diagram.layout === "LR" ? 'rankdir="LR";' : ""}\n`
         const links: ILink[] = []
         for (const def of this.defs) {
-            if (!include.has(def.name)) {
+            if (!include.has(def.name) || isProduces(def) || isConsumes(def)) {
                 continue
             }
 

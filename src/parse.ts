@@ -16,6 +16,10 @@ export function readFile(...parts: string[]) {
     return fs.readFileSync(path.join(...parts), { encoding: "utf8" })
 }
 
+export function writeFile(data: string, ...parts: string[]) {
+    return fs.writeFileSync(path.join(...parts), data, { encoding: "utf8" })
+}
+
 // grammar is split into several parts
 const grammar =
     readFile(__dirname, "grammar", "main.pegjs") +

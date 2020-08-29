@@ -684,6 +684,7 @@
     },
     {
       "kind": "produces",
+      "type": "produces",
       "parents": [],
       "short": "",
       "event": {

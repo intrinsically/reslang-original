@@ -51,6 +51,8 @@ export type DefinitionType =
     | "union"
     | "event"
     | "server-block"
+    | "produces"
+    | "consumes"
 
 export let ResourceLike = [
     "request-resource",

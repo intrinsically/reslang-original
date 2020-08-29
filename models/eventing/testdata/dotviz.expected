@@ -23,9 +23,6 @@ digraph G {
 "file.DirectoryDeleteIncomplete" [label=<
                     <table border="3" cellborder="0" cellspacing="1" style='dashed' color='gray' >
                     <tr><td><b>DirectoryDeleteIncomplete        </b></td></tr><hr/><tr><td align="left">corrupted: boolean</td></tr><tr><td align="left">timeOfFailure: datetime</td></tr></table>>];
-"file." [label=<
-                    <table border="1" cellborder="0" cellspacing="1"  color='gray' >
-                    <tr><td><b>        </b></td></tr><hr/></table>>];
 "file.DirectoryDeleteRequest::Cancel" [label=<
                     <table border="1" cellborder="0" cellspacing="1" style='rounded' color='gray' >
                     <tr><td><b>Cancel        </b></td></tr><hr/><tr><td align="left">id: int</td></tr><tr><td align="left">time: datetime</td></tr><tr><td align="right"><font color="#0000ff" point-size="8"> POST</font></td></tr></table>>];
@@ -50,18 +47,9 @@ digraph G {
 "StartSignal" [label=<
                     <table border="3" cellborder="0" cellspacing="1" style='dashed'  >
                     <tr><td><b>StartSignal        </b></td></tr><hr/><tr><td align="left">name: string</td></tr><tr><td align="left">address: string[1..10]</td></tr><tr><td align="left">name: string</td></tr><tr><td align="left">time: datetime</td></tr></table>>];
-"" [label=<
-                    <table border="1" cellborder="0" cellspacing="1"   >
-                    <tr><td><b>        </b></td></tr><hr/></table>>];
 "v3/StopSignal" [label=<
                     <table border="3" cellborder="0" cellspacing="1" style='dashed'  >
                     <tr><td><b>v3/StopSignal        </b></td></tr><hr/><tr><td align="left">stopped: datetime</td></tr></table>>];
-"" [label=<
-                    <table border="1" cellborder="0" cellspacing="1"   >
-                    <tr><td><b>        </b></td></tr><hr/></table>>];
-"" [label=<
-                    <table border="1" cellborder="0" cellspacing="1"   >
-                    <tr><td><b>        </b></td></tr><hr/></table>>];
 "Header" [label=<
                     <table border="1" cellborder="0" cellspacing="1"   >
                     <tr><td><b>Header        </b></td></tr>        <hr/><tr><td align="left">a: int</td></tr><tr><td align="left">b: long</td></tr></table> >];

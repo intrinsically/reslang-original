@@ -35,6 +35,7 @@ payload = _ "/payload" _ attrs:attributes+ _ {
 produces = _ "produces" _ name:ref {
     return {
         kind: "produces",
+        type: "produces",
         parents: [],
         short: "",
         event: name
@@ -44,6 +45,7 @@ produces = _ "produces" _ name:ref {
 consumes = _ "consumes" _ name:ref {
     return {
         kind: "consumes",
+        type: "consumes",
         parents: [],
         short: "",
         event: name

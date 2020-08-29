@@ -685,6 +685,7 @@
     },
     {
       "kind": "produces",
+      "type": "produces",
       "parents": [],
       "short": "",
       "event": {
@@ -1503,6 +1504,7 @@
     },
     {
       "kind": "produces",
+      "type": "produces",
       "parents": [],
       "short": "",
       "event": {
@@ -1590,6 +1592,7 @@
     },
     {
       "kind": "consumes",
+      "type": "consumes",
       "parents": [],
       "short": "",
       "event": {
@@ -1607,6 +1610,7 @@
     },
     {
       "kind": "produces",
+      "type": "produces",
       "parents": [],
       "short": "",
       "event": {
