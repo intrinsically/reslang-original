@@ -32,8 +32,12 @@ E.g.
                 A A::B
         }
 
-produces a more streamlined view:
+This produces a more streamlined view.
 
 ![Diagram](sections.png)
 
+You can use sections to basically structure the resource presentation any way you want.
+
 Note that you can have as many sections as you want, but each resource must be included in only 1 section. Also note that if a resource is not included in any section definition, Reslang will give it its own toplevel tag, as per the default.
+
+p.s. sections are basically equivalent to custom OpenAPI tags...
