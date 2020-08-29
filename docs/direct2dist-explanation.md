@@ -109,8 +109,8 @@ Reslang supports discriminated unions.
 
 ```
 union MappingOutputUnion {
-    outputKeyValueLabel: MappingKeyValueLabel inline
-    outputIdLabel: MappingIdLabel inline
+    outputKeyValueLabel: MappingKeyValueLabel
+    outputIdLabel: MappingIdLabel
 }
 
 structure MappingKeyValueLabel {
@@ -124,8 +124,6 @@ structure MappingIdLabel {
 ```
 
 The discriminator will always be a string field called "type". The possible values of type will be the names of the attributes - "outputKeyValueLabel" and "outputIdLabel".
-
-Note the use of "inline". This puts the attributes of the MappingIdLabel etc structure into the union directly, rather than having another level of indirection.
 
 The ReDoc view of the above structure is below. You can clearly see that keyLabel and valueLabel are at the union level now, rather than a reference to the MappingKeyValueLabel structure.
 
