@@ -91,7 +91,7 @@ export default class EventsGen extends BaseGen {
                     servers[ev.environment] = {
                         url: ev.url,
                         protocol: ev.protocol,
-                        description: ev.comment
+                        description: this.translateDoc(ev.comment)
                     }
                     assigned = true
                 } else {
@@ -126,7 +126,8 @@ export default class EventsGen extends BaseGen {
                         snakeCase(el.name) +
                         "-resource"
                 ] = {
-                    description: el.comment || "no documentation",
+                    description:
+                        this.translateDoc(el.comment) || "no documentation",
                     subscribe: {
                         summary: "REST: " + el.name,
                         operationId: el.name,
@@ -150,7 +151,8 @@ export default class EventsGen extends BaseGen {
             const def = this.extractDefinition(name)
             const unq = camelCase(this.formSingleUniqueName(def))
             const details: any = {
-                description: def.comment || "no documentation"
+                description:
+                    this.translateDoc(def.comment) || "no documentation"
             }
             const msg = {
                 summary: "Adhoc: " + def.name,
@@ -235,7 +237,7 @@ export default class EventsGen extends BaseGen {
                     messages[unique] = {
                         name: unique,
                         title: unique,
-                        summary: el.comment,
+                        summary: this.translateDoc(el.comment),
                         contentType: "application/json",
                         traits: [
                             {
@@ -256,7 +258,7 @@ export default class EventsGen extends BaseGen {
                     messages[unique] = {
                         name: unique,
                         title: unique,
-                        summary: el.comment,
+                        summary: this.translateDoc(el.comment),
                         contentType: "application/json",
                         traits: [
                             {

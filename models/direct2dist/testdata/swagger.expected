@@ -4,7 +4,8 @@ info:
   description: API for accessing LiveRamp's Direct to Distribution Service
   version: 0.0.1
 servers:
-  - url: 'https://api.liveramp.com/direct2dist'
+  - description: ''
+    url: 'https://api.liveramp.com/direct2dist'
 tags:
   - name: DistributionRequest
     description: '(request)  '

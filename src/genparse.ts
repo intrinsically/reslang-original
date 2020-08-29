@@ -6,14 +6,6 @@ import { BaseGen } from "./genbase"
 
 export default class ParseGen extends BaseGen {
     public generate() {
-        return JSON.stringify(
-            {
-                namespace: this.namespace,
-                definitions: this.defs,
-                diagrams: this.diagrams
-            },
-            null,
-            2
-        )
+        return JSON.stringify(this.parsed, null, 2)
     }
 }

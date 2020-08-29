@@ -4,7 +4,8 @@ info:
   description: This is a simple API for testing patching
   version: 1.0.0
 servers:
-  - url: 'https://api.liveramp.com/patchable'
+  - description: ''
+    url: 'https://api.liveramp.com/patchable'
 tags:
   - name: Person
     description: '(configuration)  '

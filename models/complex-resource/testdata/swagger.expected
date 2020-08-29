@@ -4,7 +4,8 @@ info:
   description: This is the description of the API
   version: 0.0.1
 servers:
-  - url: 'https://api.liveramp.com/complex-resource'
+  - description: ''
+    url: 'https://api.liveramp.com/complex-resource'
 tags:
   - name: Car
     description: (resource)  this is a Car resource

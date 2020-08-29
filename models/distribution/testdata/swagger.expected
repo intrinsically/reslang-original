@@ -4,7 +4,8 @@ info:
   description: New Onboarding API
   version: 0.0.1
 servers:
-  - url: 'https://api.liveramp.com/distribution'
+  - description: ''
+    url: 'https://api.liveramp.com/distribution'
 tags:
   - name: Destination
     description: >-

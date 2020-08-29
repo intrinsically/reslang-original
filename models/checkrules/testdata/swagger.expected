@@ -4,7 +4,8 @@ info:
   description: Test for various rule checking
   version: 0.0.1
 servers:
-  - url: 'https://api.liveramp.com/checkrules'
+  - description: ''
+    url: 'https://api.liveramp.com/checkrules'
 tags:
   - name: A
     description: '(configuration)  '

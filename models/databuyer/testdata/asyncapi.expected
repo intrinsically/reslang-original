@@ -22,6 +22,7 @@ components:
     DeliverPurchasedSegments:
       name: DeliverPurchasedSegments
       title: DeliverPurchasedSegments
+      summary: ''
       contentType: application/json
       traits:
         - $ref: '#/components/messageTraits/DeliverPurchasedSegmentsHeader'

@@ -4,7 +4,8 @@ info:
   description: ''
   version: 0.0.1
 servers:
-  - url: 'https://api.liveramp.com/dataset'
+  - description: ''
+    url: 'https://api.liveramp.com/dataset'
 tags:
   - name: 'Audience::Field'
     description: '(subresource)  '

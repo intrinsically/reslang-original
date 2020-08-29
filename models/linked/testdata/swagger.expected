@@ -4,7 +4,8 @@ info:
   description: Linked subresource test
   version: 0.0.1
 servers:
-  - url: 'https://api.liveramp.com/linked'
+  - description: ''
+    url: 'https://api.liveramp.com/linked'
 tags:
   - name: Foo
     description: '(resource)  '

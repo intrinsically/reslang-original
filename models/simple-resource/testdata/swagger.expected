@@ -4,7 +4,8 @@ info:
   description: This is the description of the API
   version: 0.1.2
 servers:
-  - url: 'https://api.liveramp.com/simple-resource'
+  - description: ''
+    url: 'https://api.liveramp.com/simple-resource'
 tags:
   - name: Garage
     description: (resource)  This is a description of a garage

@@ -4,7 +4,8 @@ info:
   description: Ed's example of missing structure in Swsagger
   version: 0.0.1
 servers:
-  - url: 'https://api.liveramp.com/edmissing'
+  - description: ''
+    url: 'https://api.liveramp.com/edmissing'
 tags:
   - name: DistributionRequest
     description: '(request)  '

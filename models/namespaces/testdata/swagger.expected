@@ -4,7 +4,8 @@ info:
   description: Namespace test
   version: 0.0.11
 servers:
-  - url: 'https://api.liveramp.com/namespaces'
+  - description: ''
+    url: 'https://api.liveramp.com/namespaces'
 tags:
   - name: A
     description: '(resource)  '

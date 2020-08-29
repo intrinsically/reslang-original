@@ -4,7 +4,8 @@ info:
   description: Multiplicity test
   version: 0.0.1
 servers:
-  - url: 'https://api.liveramp.com/multiplicity'
+  - description: ''
+    url: 'https://api.liveramp.com/multiplicity'
 tags:
   - name: MTest
     description: '(resource)  '

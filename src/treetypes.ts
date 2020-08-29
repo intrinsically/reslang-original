@@ -21,6 +21,12 @@ export interface IServer {
     protocol?: string
 }
 
+export interface ITag {
+    comment: string
+    name: string
+    include: IReference[]
+}
+
 export interface IImport {
     import: string
 }

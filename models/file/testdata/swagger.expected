@@ -4,23 +4,24 @@ info:
   description: This is a simple API for manipulating files
   version: 1.0.0
 servers:
-  - url: 'https://api.liveramp.com/file'
+  - description: ''
+    url: 'https://api.liveramp.com/file'
 tags:
-  - name: Directory
-    description: (resource)  This models a directory we might create
-  - name: FileType
-    description: '(resource)  This configures up a file type, e.g. .gif'
+  - name: Files and other arrangements
+    description: |-
+      This is a serious tag
+      A really serious one...
+  - name: Directories and other musings
+    description: |-
+      This is a directory tag
+      and it describes the functions of the directory resources
   - name: 'Directory::File'
     description: (subresource)  This models a file in a directory
-  - name: DirectoryDeleteRequest
-    description: (request)  This models a long running request
-  - name: Cancel DirectoryDeleteRequest
-    description: (sync action)  This models an action on a request
 paths:
   /v1/directories:
     post:
       tags:
-        - Directory
+        - Directories and other musings
       operationId: Create Directory
       description: ''
       requestBody:
@@ -42,7 +43,7 @@ paths:
                     example: 123e4567-e89b-12d3-a456-426655440000
     get:
       tags:
-        - Directory
+        - Directories and other musings
       operationId: Get Directories
       description: ''
       responses:
@@ -95,7 +96,7 @@ paths:
   '/v1/directories/{id}':
     get:
       tags:
-        - Directory
+        - Directories and other musings
       operationId: Get Directory
       description: ''
       responses:
@@ -122,7 +123,7 @@ paths:
   /v1/file-types:
     post:
       tags:
-        - FileType
+        - Files and other arrangements
       operationId: Create FileType
       description: ''
       requestBody:
@@ -142,7 +143,7 @@ paths:
                     type: string
     get:
       tags:
-        - FileType
+        - Files and other arrangements
       operationId: Get FileTypes
       description: ''
       responses:
@@ -188,7 +189,7 @@ paths:
   '/v1/file-types/{id}':
     get:
       tags:
-        - FileType
+        - Files and other arrangements
       operationId: Get FileType
       description: Get a FileType
       responses:
@@ -353,7 +354,7 @@ paths:
   /v1/directory-delete-requests:
     post:
       tags:
-        - DirectoryDeleteRequest
+        - Directories and other musings
       operationId: Create DirectoryDeleteRequest
       description: ''
       requestBody:
@@ -374,7 +375,7 @@ paths:
                     format: int32
     get:
       tags:
-        - DirectoryDeleteRequest
+        - Directories and other musings
       operationId: Get DirectoryDeleteRequests
       description: ''
       responses:
@@ -421,7 +422,7 @@ paths:
   '/v1/directory-delete-requests/{id}':
     get:
       tags:
-        - DirectoryDeleteRequest
+        - Directories and other musings
       operationId: Get DirectoryDeleteRequest
       description: ''
       responses:
@@ -447,7 +448,7 @@ paths:
   '/v1/directory-delete-requests/{directoryDeleteRequestId}/actions/cancel':
     post:
       tags:
-        - Cancel DirectoryDeleteRequest
+        - Files and other arrangements
       operationId: Cancel DirectoryDeleteRequest
       description: ''
       requestBody:

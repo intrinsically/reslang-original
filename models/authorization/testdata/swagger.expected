@@ -4,7 +4,8 @@ info:
   description: This is the authorization API for LiveRamp's Platform
   version: 0.0.1
 servers:
-  - url: 'https://api.liveramp.com/authorization'
+  - description: ''
+    url: 'https://api.liveramp.com/authorization'
 tags:
   - name: User
     description: '(resource)  '

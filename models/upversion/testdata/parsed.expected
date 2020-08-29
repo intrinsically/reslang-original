@@ -1,497 +1,547 @@
-{
-  "namespace": {
-    "comment": "This is the description of the API",
-    "title": "An API showing evolution",
-    "version": "1.1.2"
+[
+  {
+    "namespace": {
+      "comment": "This is the description of the API",
+      "title": "An API showing evolution",
+      "version": "1.1.2"
+    },
+    "imports": [],
+    "tags": [],
+    "definitions": [],
+    "diagrams": [],
+    "docs": []
   },
-  "definitions": [
-    {
-      "kind": "resource-like",
-      "future": false,
-      "singleton": false,
-      "type": "resource",
-      "attributes": [
-        {
-          "name": "id",
-          "stringMap": false,
-          "type": {
+  {
+    "imports": [],
+    "tags": [],
+    "definitions": [],
+    "diagrams": [
+      {
+        "diagram": "main",
+        "include": [
+          {
+            "module": "upversion",
             "parents": [],
-            "short": "int",
-            "name": "int",
+            "short": "reslang",
+            "name": "upversion.reslang",
             "parentShort": "",
             "parentName": ""
+          }
+        ],
+        "groups": []
+      }
+    ],
+    "docs": []
+  },
+  {
+    "imports": [],
+    "tags": [],
+    "definitions": [
+      {
+        "kind": "resource-like",
+        "future": false,
+        "singleton": false,
+        "type": "resource",
+        "attributes": [
+          {
+            "name": "id",
+            "stringMap": false,
+            "type": {
+              "parents": [],
+              "short": "int",
+              "name": "int",
+              "parentShort": "",
+              "parentName": ""
+            },
+            "inline": false,
+            "linked": false,
+            "full": false,
+            "modifiers": {
+              "flag": false,
+              "mutable": false,
+              "optional": false,
+              "optionalPost": false,
+              "optionalPut": false,
+              "optionalGet": false,
+              "output": false,
+              "queryonly": false,
+              "query": false,
+              "representation": false
+            },
+            "constraints": {}
           },
-          "inline": false,
-          "linked": false,
-          "full": false,
-          "modifiers": {
-            "flag": false,
-            "mutable": false,
-            "optional": false,
-            "optionalPost": false,
-            "optionalPut": false,
-            "optionalGet": false,
-            "output": false,
-            "queryonly": false,
-            "query": false,
-            "representation": false
+          {
+            "name": "name",
+            "stringMap": false,
+            "type": {
+              "parents": [],
+              "short": "string",
+              "name": "string",
+              "parentShort": "",
+              "parentName": ""
+            },
+            "inline": false,
+            "linked": false,
+            "full": false,
+            "modifiers": {
+              "flag": false,
+              "mutable": false,
+              "optional": false,
+              "optionalPost": false,
+              "optionalPut": false,
+              "optionalGet": false,
+              "output": false,
+              "queryonly": false,
+              "query": false,
+              "representation": false
+            },
+            "constraints": {}
           },
-          "constraints": {}
-        },
+          {
+            "name": "bId",
+            "stringMap": false,
+            "type": {
+              "parents": [],
+              "short": "ResourceB",
+              "name": "ResourceB",
+              "parentShort": "",
+              "parentName": ""
+            },
+            "inline": false,
+            "linked": true,
+            "full": false,
+            "modifiers": {
+              "flag": false,
+              "mutable": false,
+              "optional": false,
+              "optionalPost": false,
+              "optionalPut": false,
+              "optionalGet": false,
+              "output": false,
+              "queryonly": false,
+              "query": false,
+              "representation": false
+            },
+            "constraints": {}
+          },
+          {
+            "name": "newBId",
+            "stringMap": false,
+            "type": {
+              "parents": [],
+              "short": "v2/ResourceB",
+              "name": "v2/ResourceB",
+              "parentShort": "",
+              "parentName": ""
+            },
+            "inline": false,
+            "linked": true,
+            "full": false,
+            "modifiers": {
+              "flag": false,
+              "mutable": false,
+              "optional": false,
+              "optionalPost": false,
+              "optionalPut": false,
+              "optionalGet": false,
+              "output": false,
+              "queryonly": false,
+              "query": false,
+              "representation": false
+            },
+            "constraints": {}
+          }
+        ],
+        "operations": [
+          {
+            "operation": "GET",
+            "errors": []
+          }
+        ],
+        "parents": [],
+        "short": "ResourceA",
+        "name": "ResourceA",
+        "parentShort": "",
+        "parentName": "",
+        "namespace": "",
+        "secondary": false,
+        "file": "upversion.reslang"
+      },
+      {
+        "kind": "resource-like",
+        "future": false,
+        "singleton": false,
+        "type": "resource",
+        "attributes": [
+          {
+            "name": "id",
+            "stringMap": false,
+            "type": {
+              "parents": [],
+              "short": "int",
+              "name": "int",
+              "parentShort": "",
+              "parentName": ""
+            },
+            "inline": false,
+            "linked": false,
+            "full": false,
+            "modifiers": {
+              "flag": false,
+              "mutable": false,
+              "optional": false,
+              "optionalPost": false,
+              "optionalPut": false,
+              "optionalGet": false,
+              "output": false,
+              "queryonly": false,
+              "query": false,
+              "representation": false
+            },
+            "constraints": {}
+          },
+          {
+            "name": "size",
+            "stringMap": false,
+            "type": {
+              "parents": [],
+              "short": "int",
+              "name": "int",
+              "parentShort": "",
+              "parentName": ""
+            },
+            "inline": false,
+            "linked": false,
+            "full": false,
+            "modifiers": {
+              "flag": false,
+              "mutable": false,
+              "optional": false,
+              "optionalPost": false,
+              "optionalPut": false,
+              "optionalGet": false,
+              "output": false,
+              "queryonly": false,
+              "query": false,
+              "representation": false
+            },
+            "constraints": {}
+          }
+        ],
+        "operations": [
+          {
+            "operation": "POST",
+            "errors": []
+          },
+          {
+            "operation": "GET",
+            "errors": []
+          },
+          {
+            "operation": "PUT",
+            "errors": []
+          }
+        ],
+        "parents": [],
+        "short": "ResourceB",
+        "name": "ResourceB",
+        "parentShort": "",
+        "parentName": "",
+        "namespace": "",
+        "secondary": false,
+        "file": "upversion.reslang"
+      },
+      {
+        "kind": "resource-like",
+        "future": false,
+        "singleton": false,
+        "type": "resource",
+        "attributes": [
+          {
+            "name": "id",
+            "stringMap": false,
+            "type": {
+              "parents": [],
+              "short": "int",
+              "name": "int",
+              "parentShort": "",
+              "parentName": ""
+            },
+            "inline": false,
+            "linked": false,
+            "full": false,
+            "modifiers": {
+              "flag": false,
+              "mutable": false,
+              "optional": false,
+              "optionalPost": false,
+              "optionalPut": false,
+              "optionalGet": false,
+              "output": false,
+              "queryonly": false,
+              "query": false,
+              "representation": false
+            },
+            "constraints": {}
+          },
+          {
+            "name": "totalSize",
+            "stringMap": false,
+            "type": {
+              "parents": [],
+              "short": "int",
+              "name": "int",
+              "parentShort": "",
+              "parentName": ""
+            },
+            "inline": false,
+            "linked": false,
+            "full": false,
+            "modifiers": {
+              "flag": false,
+              "mutable": false,
+              "optional": false,
+              "optionalPost": false,
+              "optionalPut": false,
+              "optionalGet": false,
+              "output": false,
+              "queryonly": false,
+              "query": false,
+              "representation": false
+            },
+            "constraints": {}
+          }
+        ],
+        "operations": [
+          {
+            "operation": "POST",
+            "errors": []
+          },
+          {
+            "operation": "GET",
+            "errors": []
+          }
+        ],
+        "parents": [],
+        "short": "v2/ResourceB",
+        "name": "v2/ResourceB",
+        "parentShort": "",
+        "parentName": "",
+        "namespace": "",
+        "secondary": false,
+        "file": "upversion.reslang"
+      },
+      {
+        "kind": "resource-like",
+        "future": false,
+        "singleton": false,
+        "type": "subresource",
+        "attributes": [
+          {
+            "name": "id",
+            "stringMap": false,
+            "type": {
+              "parents": [],
+              "short": "int",
+              "name": "int",
+              "parentShort": "",
+              "parentName": ""
+            },
+            "inline": false,
+            "linked": false,
+            "full": false,
+            "modifiers": {
+              "flag": false,
+              "mutable": false,
+              "optional": false,
+              "optionalPost": false,
+              "optionalPut": false,
+              "optionalGet": false,
+              "output": false,
+              "queryonly": false,
+              "query": false,
+              "representation": false
+            },
+            "constraints": {}
+          },
+          {
+            "name": "name",
+            "stringMap": false,
+            "type": {
+              "parents": [],
+              "short": "string",
+              "name": "string",
+              "parentShort": "",
+              "parentName": ""
+            },
+            "inline": false,
+            "linked": false,
+            "full": false,
+            "modifiers": {
+              "flag": false,
+              "mutable": false,
+              "optional": false,
+              "optionalPost": false,
+              "optionalPut": false,
+              "optionalGet": false,
+              "output": false,
+              "queryonly": false,
+              "query": false,
+              "representation": false
+            },
+            "constraints": {}
+          }
+        ],
+        "operations": [
+          {
+            "operation": "POST",
+            "errors": []
+          },
+          {
+            "operation": "GET",
+            "errors": []
+          }
+        ],
+        "parents": [
+          "v2/ResourceB"
+        ],
+        "short": "Sub",
+        "name": "v2/ResourceB::Sub",
+        "parentShort": "v2/ResourceB",
+        "parentName": "v2/ResourceB",
+        "secondary": false,
+        "file": "upversion.reslang"
+      }
+    ],
+    "diagrams": [],
+    "docs": []
+  },
+  {
+    "imports": [],
+    "tags": [],
+    "definitions": [
+      {
+        "kind": "structure",
+        "type": "structure",
+        "parents": [],
+        "short": "StandardError",
+        "attributes": [
+          {
+            "name": "httpStatus",
+            "comment": "HTTP error status code for this problem",
+            "stringMap": false,
+            "type": {
+              "parents": [],
+              "short": "int",
+              "name": "int",
+              "parentShort": "",
+              "parentName": ""
+            },
+            "inline": false,
+            "linked": false,
+            "full": false,
+            "modifiers": {
+              "flag": false,
+              "mutable": false,
+              "optional": false,
+              "optionalPost": false,
+              "optionalPut": false,
+              "optionalGet": false,
+              "output": false,
+              "queryonly": false,
+              "query": false,
+              "representation": false
+            },
+            "constraints": {}
+          },
+          {
+            "name": "errorCode",
+            "comment": "Service specific error code, more granular",
+            "stringMap": false,
+            "type": {
+              "parents": [],
+              "short": "string",
+              "name": "string",
+              "parentShort": "",
+              "parentName": ""
+            },
+            "inline": false,
+            "linked": false,
+            "full": false,
+            "modifiers": {
+              "flag": false,
+              "mutable": false,
+              "optional": false,
+              "optionalPost": false,
+              "optionalPut": false,
+              "optionalGet": false,
+              "output": false,
+              "queryonly": false,
+              "query": false,
+              "representation": false
+            },
+            "constraints": {}
+          },
+          {
+            "name": "message",
+            "comment": "General, human readable error message",
+            "stringMap": false,
+            "type": {
+              "parents": [],
+              "short": "string",
+              "name": "string",
+              "parentShort": "",
+              "parentName": ""
+            },
+            "inline": false,
+            "linked": false,
+            "full": false,
+            "modifiers": {
+              "flag": false,
+              "mutable": false,
+              "optional": false,
+              "optionalPost": false,
+              "optionalPut": false,
+              "optionalGet": false,
+              "output": false,
+              "queryonly": false,
+              "query": false,
+              "representation": false
+            },
+            "constraints": {}
+          }
+        ],
+        "name": "StandardError",
+        "parentShort": "",
+        "parentName": "",
+        "secondary": false,
+        "file": "local.reslang"
+      }
+    ],
+    "diagrams": [],
+    "docs": []
+  },
+  {
+    "imports": [],
+    "servers": {
+      "rest": [
         {
-          "name": "name",
-          "stringMap": false,
-          "type": {
-            "parents": [],
-            "short": "string",
-            "name": "string",
-            "parentShort": "",
-            "parentName": ""
-          },
-          "inline": false,
-          "linked": false,
-          "full": false,
-          "modifiers": {
-            "flag": false,
-            "mutable": false,
-            "optional": false,
-            "optionalPost": false,
-            "optionalPut": false,
-            "optionalGet": false,
-            "output": false,
-            "queryonly": false,
-            "query": false,
-            "representation": false
-          },
-          "constraints": {}
-        },
-        {
-          "name": "bId",
-          "stringMap": false,
-          "type": {
-            "parents": [],
-            "short": "ResourceB",
-            "name": "ResourceB",
-            "parentShort": "",
-            "parentName": ""
-          },
-          "inline": false,
-          "linked": true,
-          "full": false,
-          "modifiers": {
-            "flag": false,
-            "mutable": false,
-            "optional": false,
-            "optionalPost": false,
-            "optionalPut": false,
-            "optionalGet": false,
-            "output": false,
-            "queryonly": false,
-            "query": false,
-            "representation": false
-          },
-          "constraints": {}
-        },
-        {
-          "name": "newBId",
-          "stringMap": false,
-          "type": {
-            "parents": [],
-            "short": "v2/ResourceB",
-            "name": "v2/ResourceB",
-            "parentShort": "",
-            "parentName": ""
-          },
-          "inline": false,
-          "linked": true,
-          "full": false,
-          "modifiers": {
-            "flag": false,
-            "mutable": false,
-            "optional": false,
-            "optionalPost": false,
-            "optionalPut": false,
-            "optionalGet": false,
-            "output": false,
-            "queryonly": false,
-            "query": false,
-            "representation": false
-          },
-          "constraints": {}
+          "url": "https://api.liveramp.com",
+          "environment": "PROD"
         }
       ],
-      "operations": [
+      "events": [
         {
-          "operation": "GET",
-          "errors": []
+          "comment": "Production Google Pubsub server",
+          "url": "http://pubsub.google.com",
+          "environment": "PROD",
+          "protocol": "GOOGLE_PUBSUB"
         }
-      ],
-      "parents": [],
-      "short": "ResourceA",
-      "name": "ResourceA",
-      "parentShort": "",
-      "parentName": "",
-      "namespace": "",
-      "secondary": false,
-      "file": "upversion.reslang"
+      ]
     },
-    {
-      "kind": "resource-like",
-      "future": false,
-      "singleton": false,
-      "type": "resource",
-      "attributes": [
-        {
-          "name": "id",
-          "stringMap": false,
-          "type": {
-            "parents": [],
-            "short": "int",
-            "name": "int",
-            "parentShort": "",
-            "parentName": ""
-          },
-          "inline": false,
-          "linked": false,
-          "full": false,
-          "modifiers": {
-            "flag": false,
-            "mutable": false,
-            "optional": false,
-            "optionalPost": false,
-            "optionalPut": false,
-            "optionalGet": false,
-            "output": false,
-            "queryonly": false,
-            "query": false,
-            "representation": false
-          },
-          "constraints": {}
-        },
-        {
-          "name": "size",
-          "stringMap": false,
-          "type": {
-            "parents": [],
-            "short": "int",
-            "name": "int",
-            "parentShort": "",
-            "parentName": ""
-          },
-          "inline": false,
-          "linked": false,
-          "full": false,
-          "modifiers": {
-            "flag": false,
-            "mutable": false,
-            "optional": false,
-            "optionalPost": false,
-            "optionalPut": false,
-            "optionalGet": false,
-            "output": false,
-            "queryonly": false,
-            "query": false,
-            "representation": false
-          },
-          "constraints": {}
-        }
-      ],
-      "operations": [
-        {
-          "operation": "POST",
-          "errors": []
-        },
-        {
-          "operation": "GET",
-          "errors": []
-        },
-        {
-          "operation": "PUT",
-          "errors": []
-        }
-      ],
-      "parents": [],
-      "short": "ResourceB",
-      "name": "ResourceB",
-      "parentShort": "",
-      "parentName": "",
-      "namespace": "",
-      "secondary": false,
-      "file": "upversion.reslang"
-    },
-    {
-      "kind": "resource-like",
-      "future": false,
-      "singleton": false,
-      "type": "resource",
-      "attributes": [
-        {
-          "name": "id",
-          "stringMap": false,
-          "type": {
-            "parents": [],
-            "short": "int",
-            "name": "int",
-            "parentShort": "",
-            "parentName": ""
-          },
-          "inline": false,
-          "linked": false,
-          "full": false,
-          "modifiers": {
-            "flag": false,
-            "mutable": false,
-            "optional": false,
-            "optionalPost": false,
-            "optionalPut": false,
-            "optionalGet": false,
-            "output": false,
-            "queryonly": false,
-            "query": false,
-            "representation": false
-          },
-          "constraints": {}
-        },
-        {
-          "name": "totalSize",
-          "stringMap": false,
-          "type": {
-            "parents": [],
-            "short": "int",
-            "name": "int",
-            "parentShort": "",
-            "parentName": ""
-          },
-          "inline": false,
-          "linked": false,
-          "full": false,
-          "modifiers": {
-            "flag": false,
-            "mutable": false,
-            "optional": false,
-            "optionalPost": false,
-            "optionalPut": false,
-            "optionalGet": false,
-            "output": false,
-            "queryonly": false,
-            "query": false,
-            "representation": false
-          },
-          "constraints": {}
-        }
-      ],
-      "operations": [
-        {
-          "operation": "POST",
-          "errors": []
-        },
-        {
-          "operation": "GET",
-          "errors": []
-        }
-      ],
-      "parents": [],
-      "short": "v2/ResourceB",
-      "name": "v2/ResourceB",
-      "parentShort": "",
-      "parentName": "",
-      "namespace": "",
-      "secondary": false,
-      "file": "upversion.reslang"
-    },
-    {
-      "kind": "resource-like",
-      "future": false,
-      "singleton": false,
-      "type": "subresource",
-      "attributes": [
-        {
-          "name": "id",
-          "stringMap": false,
-          "type": {
-            "parents": [],
-            "short": "int",
-            "name": "int",
-            "parentShort": "",
-            "parentName": ""
-          },
-          "inline": false,
-          "linked": false,
-          "full": false,
-          "modifiers": {
-            "flag": false,
-            "mutable": false,
-            "optional": false,
-            "optionalPost": false,
-            "optionalPut": false,
-            "optionalGet": false,
-            "output": false,
-            "queryonly": false,
-            "query": false,
-            "representation": false
-          },
-          "constraints": {}
-        },
-        {
-          "name": "name",
-          "stringMap": false,
-          "type": {
-            "parents": [],
-            "short": "string",
-            "name": "string",
-            "parentShort": "",
-            "parentName": ""
-          },
-          "inline": false,
-          "linked": false,
-          "full": false,
-          "modifiers": {
-            "flag": false,
-            "mutable": false,
-            "optional": false,
-            "optionalPost": false,
-            "optionalPut": false,
-            "optionalGet": false,
-            "output": false,
-            "queryonly": false,
-            "query": false,
-            "representation": false
-          },
-          "constraints": {}
-        }
-      ],
-      "operations": [
-        {
-          "operation": "POST",
-          "errors": []
-        },
-        {
-          "operation": "GET",
-          "errors": []
-        }
-      ],
-      "parents": [
-        "v2/ResourceB"
-      ],
-      "short": "Sub",
-      "name": "v2/ResourceB::Sub",
-      "parentShort": "v2/ResourceB",
-      "parentName": "v2/ResourceB",
-      "secondary": false,
-      "file": "upversion.reslang"
-    },
-    {
-      "kind": "structure",
-      "type": "structure",
-      "parents": [],
-      "short": "StandardError",
-      "attributes": [
-        {
-          "name": "httpStatus",
-          "comment": "HTTP error status code for this problem",
-          "stringMap": false,
-          "type": {
-            "parents": [],
-            "short": "int",
-            "name": "int",
-            "parentShort": "",
-            "parentName": ""
-          },
-          "inline": false,
-          "linked": false,
-          "full": false,
-          "modifiers": {
-            "flag": false,
-            "mutable": false,
-            "optional": false,
-            "optionalPost": false,
-            "optionalPut": false,
-            "optionalGet": false,
-            "output": false,
-            "queryonly": false,
-            "query": false,
-            "representation": false
-          },
-          "constraints": {}
-        },
-        {
-          "name": "errorCode",
-          "comment": "Service specific error code, more granular",
-          "stringMap": false,
-          "type": {
-            "parents": [],
-            "short": "string",
-            "name": "string",
-            "parentShort": "",
-            "parentName": ""
-          },
-          "inline": false,
-          "linked": false,
-          "full": false,
-          "modifiers": {
-            "flag": false,
-            "mutable": false,
-            "optional": false,
-            "optionalPost": false,
-            "optionalPut": false,
-            "optionalGet": false,
-            "output": false,
-            "queryonly": false,
-            "query": false,
-            "representation": false
-          },
-          "constraints": {}
-        },
-        {
-          "name": "message",
-          "comment": "General, human readable error message",
-          "stringMap": false,
-          "type": {
-            "parents": [],
-            "short": "string",
-            "name": "string",
-            "parentShort": "",
-            "parentName": ""
-          },
-          "inline": false,
-          "linked": false,
-          "full": false,
-          "modifiers": {
-            "flag": false,
-            "mutable": false,
-            "optional": false,
-            "optionalPost": false,
-            "optionalPut": false,
-            "optionalGet": false,
-            "output": false,
-            "queryonly": false,
-            "query": false,
-            "representation": false
-          },
-          "constraints": {}
-        }
-      ],
-      "name": "StandardError",
-      "parentShort": "",
-      "parentName": "",
-      "secondary": false,
-      "file": "local.reslang"
-    }
-  ],
-  "diagrams": [
-    {
-      "diagram": "main",
-      "include": [
-        {
-          "module": "upversion",
-          "parents": [],
-          "short": "reslang",
-          "name": "upversion.reslang",
-          "parentShort": "",
-          "parentName": ""
-        }
-      ],
-      "groups": []
-    }
-  ]
-}
+    "tags": [],
+    "definitions": [],
+    "diagrams": [],
+    "docs": []
+  }
+]

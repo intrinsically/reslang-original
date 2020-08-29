@@ -4,7 +4,8 @@ info:
   description: MULTIPOST test
   version: 0.0.1
 servers:
-  - url: 'https://api.liveramp.com/multi'
+  - description: ''
+    url: 'https://api.liveramp.com/multi'
 tags:
   - name: Aaa
     description: '(resource)  '

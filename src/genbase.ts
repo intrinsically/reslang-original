@@ -22,9 +22,10 @@ import {
     isConsumes,
     isAction,
     isUnion,
-    getAllAttributes
+    getAllAttributes,
+    ITag
 } from "./treetypes"
-import { parseFile, isPrimitiveType } from "./parse"
+import { parseFile, isPrimitiveType, IParseTree } from "./parse"
 import { readdirSync, statSync } from "fs"
 import { join } from "path"
 import lpath from "path"
@@ -130,10 +131,12 @@ export abstract class BaseGen {
     // the user defined space, if there is one, in the namespace definition
     protected space?: string
     protected defs: AnyKind[] = []
+    protected tags: ITag[] = []
     protected diagrams: IDiagram[] = []
     protected documentation: { [name: string]: IDocEntry[] } = {}
     protected empty = new Set<string>()
     protected loaded = new Set<string>()
+    protected parsed = new Array<IParseTree>()
 
     public constructor(
         private dirs: string[],
@@ -264,48 +267,57 @@ export abstract class BaseGen {
                 this.mainNamespace!,
                 lst.namespace
             )
-            if (local[0] && main) {
+            this.parsed.push(local)
+            if (local.namespace && main) {
                 if (!this.namespace) {
-                    this.namespace = local[0]
+                    this.namespace = local.namespace
                 } else {
                     throw new Error(
                         "Cannot specify more than one namespace in a module: " +
-                            local[0]
+                            local.namespace
                     )
                 }
             }
 
             // complain if we have more than 1 server block
-            if (local[2] && main) {
+            if (local.servers && main) {
                 if (!this.servers) {
-                    this.servers = local[2]
+                    this.servers = local.servers
                     // fix up server block vars
                     replaceServerVars(this.vars, this.servers)
                 } else {
                     throw new Error(
                         "Cannot specify more than one server block in a model: " +
-                            local[2]
+                            local.servers
                     )
                 }
             }
 
             // handle any imports
-            for (const imp of local[1] as IImport[]) {
+            for (const imp of local.imports as IImport[]) {
                 this.processDefinition(path + imp.import, false)
             }
+
+            // copy over the tags
+            if (reallyMain) {
+                for (const tag of local.tags as ITag[]) {
+                    this.tags.push(tag)
+                }
+            }
+
             // copy over all the defs
-            for (const def of local[3] as AnyKind[]) {
+            for (const def of local.definitions as AnyKind[]) {
                 def.secondary = !reallyMain
                 def.file = lst.file
                 this.defs.push(def)
             }
             // copy over all the diagrams
-            for (const diag of local[4] as IDiagram[]) {
+            for (const diag of local.diagrams as IDiagram[]) {
                 this.diagrams.push(diag)
             }
 
             // copy over all the documentation
-            for (const doc of local[5] as IDocumentation[]) {
+            for (const doc of local.docs as IDocumentation[]) {
                 this.documentation[doc.name] = doc.entries
             }
         }

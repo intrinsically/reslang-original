@@ -102,6 +102,7 @@ components:
     fileDirectoryDeleteIncomplete:
       name: fileDirectoryDeleteIncomplete
       title: fileDirectoryDeleteIncomplete
+      summary: ''
       contentType: application/json
       traits:
         - $ref: '#/components/messageTraits/fileDirectoryDeleteIncompleteHeader'

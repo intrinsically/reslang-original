@@ -54,7 +54,7 @@ export default class SwagGen extends BaseGen {
         for (const rest of this.servers.rest) {
             if (rest.environment === this.environment) {
                 servers.push({
-                    description: rest.comment,
+                    description: this.translateDoc(rest.comment),
                     url:
                         rest.url +
                         (this.omitNamespace ? "" : "/" + this.getSpace())
@@ -857,9 +857,48 @@ export default class SwagGen extends BaseGen {
     }
 
     private formTags(tags: any[], tagKeys: { [key: string]: string }) {
+        // generate the explicit tags
+        const map = new Map<string, string>() // defName to tag name
+        for (const explicit of this.tags) {
+            const name = explicit.name
+            const tag = {
+                name,
+                description: this.translateDoc(explicit.comment)
+            }
+            tags.push(tag)
+
+            // check all the included elements exist
+            for (const include of explicit.include) {
+                const el = this.extractDefinition(include.name)
+
+                // must be a first class resource
+                if (el.secondary || !isResourceLike(el) || el.future) {
+                    throw new Error(
+                        `Definition "${el.name}" cannot be included in tag "${explicit.name}".` +
+                            ` Only top level, non-future resources can be included`
+                    )
+                }
+                // cannot be included in another tag
+                const defName = this.formSingleUniqueName(el)
+                if (tagKeys[defName]) {
+                    throw new Error(
+                        `Definition "${defName}" cannot be included in two tags: "${name}"`
+                    )
+                }
+
+                map.set(include.name, explicit.name)
+                tagKeys[defName] = tag.name
+            }
+        }
+
         for (const el of this.defs) {
             // don't generate for any imported def
-            if (el.secondary || !isResourceLike(el) || el.future) {
+            if (
+                el.secondary ||
+                !isResourceLike(el) ||
+                el.future ||
+                map.has(el.name)
+            ) {
                 continue
             }
             const comment = this.translateDoc(el.comment)

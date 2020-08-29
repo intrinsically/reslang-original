@@ -1,3 +1,15 @@
+"This is a serious tag
+A really serious one..."
+section Files and other arrangements {
+	/include
+		FileType DirectoryDeleteRequest::Cancel
+}
+
+"This is a another tag: See docs: FileDocs.DirectoryTag"
+section Directories and other musings {
+	/include
+		Directory DirectoryDeleteRequest
+}
 
 "This models a directory we might create"
 resource Directory {

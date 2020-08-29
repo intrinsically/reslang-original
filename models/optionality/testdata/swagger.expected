@@ -4,7 +4,8 @@ info:
   description: Optionality test
   version: 0.0.1
 servers:
-  - url: 'https://api.liveramp.com/optionality'
+  - description: ''
+    url: 'https://api.liveramp.com/optionality'
 tags:
   - name: Car
     description: (configuration)  A Car Garage

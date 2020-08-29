@@ -8,7 +8,9 @@ import {
     isResourceLike,
     AnyKind,
     isProduces,
-    isConsumes
+    isConsumes,
+    IImport,
+    ITag
 } from "./treetypes"
 import * as path from "path"
 
@@ -23,6 +25,7 @@ export function writeFile(data: string, ...parts: string[]) {
 // grammar is split into several parts
 const grammar =
     readFile(__dirname, "grammar", "main.pegjs") +
+    readFile(__dirname, "grammar", "tags.pegjs") +
     readFile(__dirname, "grammar", "servers.pegjs") +
     readFile(__dirname, "grammar", "rest.pegjs") +
     readFile(__dirname, "grammar", "events.pegjs") +
@@ -41,12 +44,22 @@ export function loadParser() {
     }
 }
 
+export interface IParseTree {
+    namespace?: any
+    imports?: any[]
+    servers?: any
+    tags?: any[]
+    definitions?: any[]
+    diagrams?: any[]
+    docs?: any[]
+}
+
 export function parseFile(
     file: string,
     parsingNamespace: string,
     mainNamespace: string,
     additionalNamespace: string
-) {
+): IParseTree {
     const contents = readFile(file)
     function locToString(location: any) {
         return location
@@ -71,14 +84,35 @@ export function parseFile(
             `Problem parsing file ${file}: ${error.message}, ${loc}`
         )
     }
+    const parsed: IParseTree = {
+        namespace: tree[0],
+        imports: tree[1],
+        servers: tree[2],
+        tags: tree[3],
+        definitions: tree[4],
+        diagrams: tree[5],
+        docs: tree[6]
+    }
     addNamespace(
-        tree[3] as AnyKind[],
+        parsed.definitions as AnyKind[],
         parsingNamespace,
         mainNamespace,
         additionalNamespace
     )
-    addDiagramNamespace(tree[4] as IDiagram[], parsingNamespace, mainNamespace)
-    return tree
+    addDiagramNamespace(
+        parsed.diagrams as IDiagram[],
+        parsingNamespace,
+        mainNamespace
+    )
+
+    // convert the tags
+    for (const tag of parsed.tags as ITag[]) {
+        for (const incl of tag.include) {
+            convert(incl, parsingNamespace, mainNamespace)
+        }
+    }
+
+    return parsed
 }
 
 // create name, parentName and parentShort from the module, parents and short fields
