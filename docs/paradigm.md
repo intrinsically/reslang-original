@@ -58,9 +58,9 @@ Contrast REST versus Reslang versus OO versus RPC:
 | RPC             | 1 noun (the broker), X methods (no resources, no uniformity)                |
 
 
-## Batch Operations
+## Bulk Operations
 
-Reslang also provides batch version of the standard HTTP verbs. These basically take (or return) an array of the contents of the normal verbs. You can mix and match the batch and standard verbs, with the exception that you cannot have both POST and MULTIPOST because they occupy the same URL.
+Reslang also provides batch/bulk version of the standard HTTP verbs. These basically take (or return) an array of the contents of the normal verbs. You can mix and match the batch and standard verbs, with the exception that you cannot have both POST and MULTIPOST because they occupy the same URL.
 
 Here's an example, along with the appropriate Swagger UI view. The MULTPOST accepts an array of Car representations (without id) and returns an array of Error responses indicating the success of each Car creation.
 
@@ -83,7 +83,22 @@ This creates the following ReDoc view - we've selected MULTIPOST so you can see 
 
 ![cars](cars.png)
 
-## Batch Actions
+## Bulk Actions
 
-TBD
+A bulk action looks like it lives as a subresource, but really it requires no resource.
+
+Here is a simple example:
+
+```
+sync bulk action DeliverPurchasedSegments::search {
+    id: string
+    name: string query
+    /operations
+        MULTIGET
+}
+```
+
+Here we create an action "search" on DeliverPurchasedSegments. It looks like a subresource, but it actually lives at the toplevel - in this example it searches segments using parameters. The URL is /v1/deliver-purchased-segments/actions/search and calling MULTIGET allows you to specify a way to search segments.
+
+
 
