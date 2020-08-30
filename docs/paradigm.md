@@ -12,7 +12,7 @@ Reslang contains 2 concepts to handle this - actions and request-resources. Acti
 
 Note that both normal resources and request-resources can have actions.
 
-Let's reconsider our simple File intro example [here](intro.md).
+Let's reconsider our simple File intro example [here](intro.md). Here's the part that deals with deleting directories:
 
 ```
 "This models a long running request"
@@ -36,7 +36,7 @@ sync action DirectoryDeleteRequest::Cancel {
 
 You'll note that DirectoryDeleteRequest is a request-resource. You create it via POST, and it returns 201. At this point the request has been received and is being processed in the background. You can then GET its representation and look to see if it has finished.
 
-In some cases, actions are appropriate. We consider these custom verbs. In this case we have provided an action to cancel a DirectoryDeleteRequest, rather than using DELETE. The action is synchronous, so when it returns from the POST with a 200, you know that the DirectoryDeleteRequest has been canceled, but it can still be queried as it has not been canceled.
+In some cases, actions are appropriate. We consider these custom verbs. In this case we have provided an action to cancel a DirectoryDeleteRequest, rather than using DELETE. The action is synchronous, so when it returns from the POST with a 200, you know that the DirectoryDeleteRequest has been canceled, but it can still be queried as it has not been canceled. If it were async instead, it would return 202 if the action had been accepted but is not yet complete. Alternatively it might return 200 (if the action was complete upon return) or 204 if the action had already been submitted and was underway.
 
 ## Reslang/REST versus OO versus RPC
 
