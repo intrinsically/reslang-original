@@ -8,7 +8,7 @@ Why is our approach opinionated? Well, it biases away from HATEOAS towards a sim
 
 The full vision of REST implies that applications hold state and push it down to servers as resources. However, in our experience, there are always times when the server has a set of long running requests, some of them asynchronous, that we need to model.
 
-Reslang contains 2 concepts to handle this - actions and request-resources. Actions can be both synchronous and asynchronous - request-resources are always considered to be asynchronous. We term both of these 'resourcification' - the action of turning a request/action into a resource.
+Reslang contains 2 concepts to handle this - actions and request-resources. Actions are basically subresources of resources, and can be both synchronous and asynchronous. Request-resources are toplevel resources, which are always considered to be asynchronous. We term both of these approaches 'resourcification' - the action of turning a request/action into a resource.
 
 Let's reconsider our simple File intro example [here](intro.md).
 

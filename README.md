@@ -14,7 +14,7 @@ Reslang is licensed under [Apache V2](https://www.apache.org/licenses/LICENSE-2.
 | ---------------------------------------------------- | --------------------------------------------------------------------------------------- |
 | [Why reslang?](./docs/why.md)                        | Why do we need this tool and what does it offer?                                        |
 | [Intro tutorial](./docs/intro.md)                    | Describes making a toy API for manipulating files and directories.                      |
-| [The Reslang API paradigm](./docs/paradigm.md)       | What is the Reslang paradigm and how does it relate to REST, OO and RPC                 |
+| [The API paradigm](./docs/paradigm.md)               | What is the Reslang paradigm and how does it relate to REST, OO and RPC                 |
 | [Event intro tutorial](./docs/intro-events.md)       | Describes a simple example of how to generate AsyncAPI to describe events               |
 | [Sections](./docs/sections.md)                       | This explains how to reorder / group the presentation of your resources                 |
 | [Direct2Dist API](./docs/direct2dist-explanation.md) | This is a more complex example which recreates the entire Direct2Dist API.              |
