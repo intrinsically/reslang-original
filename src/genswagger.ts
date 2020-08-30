@@ -323,6 +323,7 @@ export default class SwagGen extends BaseGen {
             }
         }
         if (ops.multipost) {
+            console.log("Multipost")
             const content = {
                 "application/json": {
                     schema: {
@@ -348,7 +349,7 @@ export default class SwagGen extends BaseGen {
             }
 
             this.formErrors(ops.multipost, responses)
-            path.put = {
+            path.post = {
                 tags: [tagKeys[unique]],
                 operationId: this.formOperationId(el, Verbs.MULTIPOST),
                 description: this.translateDoc(ops.multipost.comment),
