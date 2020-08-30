@@ -1,16 +1,20 @@
 # The Reslang Paradigm for API Creation
 
-Reslang biases towards an opinionated, resource oriented views of APIs. In this paradigm, the nouns are all resources (and subresources) on the server and you can perform operations on them via the REST verbs - the famous uniform interface. You can GET a resource, use POST to create, PUT & PUT to update, and DELETE to delete.
+Reslang provides an opinionated, resource oriented views of APIs. In this paradigm, you have resources (and subresources) on the server and you can perform operations on them via the REST verbs - the famous uniform interface. i.e.you can GET a resource, use POST to create, PUT & PUT to update, and DELETE to delete.
 
 Why is our approach opinionated? Well, it biases away from HATEOAS towards a simpler more pragmatic view. References to other resources are represented by ids, rather than links.
 
-## A Getout Clause
+## A Getout Clause: Escaping from Pure Resources
 
 The full vision of REST implies that applications hold state and push it down to servers as resources. However, in our experience, there are always times when the server has a set of long running requests, some of them asynchronous, that we need to model.
 
-Reslang contains 2 concepts to handle this - actions and request-resources. Actions are basically custom resource verbs, modeled as subresources on those resources, and can be both synchronous and asynchronous. Request-resources are toplevel resources, which are always considered to be asynchronous. We term both of these approaches 'resourcification' - the action of turning a request/action into a resource.
+Reslang contains 2 concepts to handle this - actions and request-resources.
 
-Note that both normal resources and request-resources can have actions.
+Actions are basically custom verbs, modeled as subresources on a parent resource, and they can be both synchronous and asynchronous.
+
+Request-resources in contrast are always toplevel resources, with no parent, which are always considered to be asynchronous.
+
+We term this 'resourcification' - the action of turning a request or action into a resource. Note that both normal resources and request-resources can have actions.
 
 Let's reconsider our simple File intro example [here](intro.md). Here's the part that deals with deleting directories:
 
@@ -36,7 +40,7 @@ sync action DirectoryDeleteRequest::Cancel {
 
 You'll note that DirectoryDeleteRequest is a request-resource. You create it via POST, and it returns 201. At this point the request has been received and is being processed in the background. You can then GET its representation and look to see if it has finished.
 
-In some cases, actions are appropriate. We consider these custom verbs. In this case we have provided an action to cancel a DirectoryDeleteRequest, rather than using DELETE. The action is synchronous, so when it returns from the POST with a 200, you know that the DirectoryDeleteRequest has been canceled, but it can still be queried as it has not been canceled. If it were async instead, it would return 202 if the action had been accepted but is not yet complete. Alternatively it might return 200 (if the action was complete upon return) or 204 if the action had already been submitted and was underway.
+In some cases, actions are appropriate to model custom verbs. In this case we have provided an action to cancel a DirectoryDeleteRequest, rather than using DELETE (which removes the record of the resource). The action is synchronous, so when it returns from the POST with a 200, you know that the DirectoryDeleteRequest has been canceled, but it can still be queried as it has not been canceled. If it were async instead, it would return 202 if the action had been accepted but is not yet complete. Alternatively it might return 200 (if the action was complete upon return) or 204 if the action had already been submitted and was underway.
 
 ## Reslang/REST versus OO versus RPC
 
@@ -46,7 +50,7 @@ We further allow resources to have actions (which themselves are just subresourc
 
 Contrast REST versus Reslang versus OO versus RPC:
 
-|                 |                                                                             |
+| Paradigm        | Meaning                                                                     |
 | --------------- | --------------------------------------------------------------------------- |
 | Standard REST   | N nouns/resources, a fixed set of HTTP verbs                                |
 | Reslang         | Standard REST, plus actions and request-resources for modeling custom verbs |
@@ -56,7 +60,7 @@ Contrast REST versus Reslang versus OO versus RPC:
 
 ## Batch Operations
 
-Reslang provides batch version of the standard HTTP verbs. These basically take (or return) an array of the contents of the normal verbs. You can mix and match the batch and standard verbs, with the exception that you cannot have both POST and MULTIPOST because they occupy the same URL.
+Reslang also provides batch version of the standard HTTP verbs. These basically take (or return) an array of the contents of the normal verbs. You can mix and match the batch and standard verbs, with the exception that you cannot have both POST and MULTIPOST because they occupy the same URL.
 
 Here's an example, along with the appropriate Swagger UI view. The MULTPOST accepts an array of Car representations (without id) and returns an array of Error responses indicating the success of each Car creation.
 
@@ -78,4 +82,8 @@ resource Car {
 This creates the following ReDoc view - we've selected MULTIPOST so you can see the inputs and outputs:
 
 ![cars](cars.png)
+
+## Batch Actions
+
+TBD
 
