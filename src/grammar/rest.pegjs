@@ -5,6 +5,7 @@ resource = _ comment:description? _ future:"future"? _ singleton:"singleton"? _ 
     attributes:attributes? _ operations:operations? _ events:events? _
 "}" _ ";"? _ {
     return {
+        category: "definition",
         kind: "resource-like",
         comment: comment, future: !!future, singleton: !!singleton, type: type, 
         attributes: attributes, operations: operations, events,
@@ -15,6 +16,7 @@ subresource = _ comment:description? _ future:"future"? _ singleton:"singleton"?
     attributes:attributes? _ operations:operations? _ events:events? _
 "}" _ ";"? _ {
     return {
+        category: "definition",
         kind: "resource-like",
         comment: comment, future: !!future, singleton: !!singleton, type: type, 
         attributes: attributes, operations: operations, events,
@@ -25,6 +27,7 @@ action = _ comment:description? _ future:"future"? _ async:("sync"/"async") _ bu
     attributes:attributes? _ operations:operations? _ events:events? _
 "}" _ ";"? _ {
     return {
+        category: "definition",
         kind: "resource-like",
         comment: comment, future: !!future, singleton: false, type: "action", async: async == "async", 
         attributes: attributes, operations: operations, events,

@@ -1,22 +1,29 @@
 [
   {
-    "namespace": {
-      "comment": "This is a simple server block test",
-      "title": "Server block test",
-      "version": "0.0.1"
-    },
+    "namespace": [
+      {
+        "category": "namespace",
+        "comment": "This is a simple server block test",
+        "title": "Server block test",
+        "version": "0.0.1"
+      }
+    ],
     "imports": [],
+    "servers": [],
     "tags": [],
     "definitions": [],
     "diagrams": [],
     "docs": []
   },
   {
+    "namespace": [],
     "imports": [],
+    "servers": [],
     "tags": [],
     "definitions": [],
     "diagrams": [
       {
+        "category": "diagram",
         "diagram": "main",
         "include": [
           {
@@ -34,36 +41,42 @@
     "docs": []
   },
   {
+    "namespace": [],
     "imports": [
       {
+        "category": "import",
         "import": "servers2"
       }
     ],
-    "servers": {
-      "rest": [
-        {
-          "comment": "This is the test server",
-          "url": "http://test-api.liveramp.com:8080",
-          "environment": "TEST"
-        },
-        {
-          "comment": "This is the prod server",
-          "url": "http://prod-api.liveramp.com:8080",
-          "environment": "PROD"
-        }
-      ],
-      "events": [
-        {
-          "comment": "This is the standard event server",
-          "url": "http://pubsub.google.com:1020",
-          "environment": "PROD",
-          "protocol": "AQMP"
-        }
-      ]
-    },
+    "servers": [
+      {
+        "category": "servers",
+        "rest": [
+          {
+            "comment": "This is the test server",
+            "url": "http://test-api.liveramp.com:8080",
+            "environment": "TEST"
+          },
+          {
+            "comment": "This is the prod server",
+            "url": "http://prod-api.liveramp.com:8080",
+            "environment": "PROD"
+          }
+        ],
+        "events": [
+          {
+            "comment": "This is the standard event server",
+            "url": "http://pubsub.google.com:1020",
+            "environment": "PROD",
+            "protocol": "AQMP"
+          }
+        ]
+      }
+    ],
     "tags": [],
     "definitions": [
       {
+        "category": "definition",
         "kind": "resource-like",
         "future": false,
         "singleton": false,
@@ -148,51 +161,62 @@
     "docs": []
   },
   {
-    "namespace": {
-      "comment": "Exists just to test that another module can import this without problems, even though it has a server block",
-      "title": "Server block test2",
-      "version": "0.0.1"
-    },
+    "namespace": [
+      {
+        "category": "namespace",
+        "comment": "Exists just to test that another module can import this without problems, even though it has a server block",
+        "title": "Server block test2",
+        "version": "0.0.1"
+      }
+    ],
     "imports": [],
+    "servers": [],
     "tags": [],
     "definitions": [],
     "diagrams": [],
     "docs": []
   },
   {
+    "namespace": [],
     "imports": [],
-    "servers": {
-      "rest": [
-        {
-          "comment": "This is the test server",
-          "url": "http://www.liveramp.com:{port:8080}",
-          "environment": "TEST"
-        },
-        {
-          "comment": "This is the prod server",
-          "url": "http://www.liveramp.com:{port:8080}",
-          "environment": "PROD"
-        }
-      ],
-      "events": [
-        {
-          "comment": "This is the standard event server",
-          "url": "http://www.google.com:{port:1020}",
-          "environment": "PROD",
-          "protocol": "AQMP"
-        }
-      ]
-    },
+    "servers": [
+      {
+        "category": "servers",
+        "rest": [
+          {
+            "comment": "This is the test server",
+            "url": "http://www.liveramp.com:{port:8080}",
+            "environment": "TEST"
+          },
+          {
+            "comment": "This is the prod server",
+            "url": "http://www.liveramp.com:{port:8080}",
+            "environment": "PROD"
+          }
+        ],
+        "events": [
+          {
+            "comment": "This is the standard event server",
+            "url": "http://www.google.com:{port:1020}",
+            "environment": "PROD",
+            "protocol": "AQMP"
+          }
+        ]
+      }
+    ],
     "tags": [],
     "definitions": [],
     "diagrams": [],
     "docs": []
   },
   {
+    "namespace": [],
     "imports": [],
+    "servers": [],
     "tags": [],
     "definitions": [
       {
+        "category": "definition",
         "kind": "structure",
         "type": "structure",
         "parents": [],
@@ -294,10 +318,13 @@
     "docs": []
   },
   {
+    "namespace": [],
     "imports": [],
+    "servers": [],
     "tags": [],
     "definitions": [
       {
+        "category": "definition",
         "kind": "structure",
         "type": "structure",
         "parents": [],

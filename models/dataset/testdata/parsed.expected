@@ -1,20 +1,27 @@
 [
   {
-    "namespace": {
-      "title": "Segment API - ALPHA",
-      "version": "0.0.1"
-    },
+    "namespace": [
+      {
+        "category": "namespace",
+        "title": "Segment API - ALPHA",
+        "version": "0.0.1"
+      }
+    ],
     "imports": [],
+    "servers": [],
     "tags": [],
     "definitions": [],
     "diagrams": [],
     "docs": []
   },
   {
+    "namespace": [],
     "imports": [],
+    "servers": [],
     "tags": [],
     "definitions": [
       {
+        "category": "definition",
         "kind": "resource-like",
         "future": true,
         "singleton": false,
@@ -62,11 +69,14 @@
     "docs": []
   },
   {
+    "namespace": [],
     "imports": [],
+    "servers": [],
     "tags": [],
     "definitions": [],
     "diagrams": [
       {
+        "category": "diagram",
         "diagram": "main",
         "include": [
           {
@@ -92,10 +102,13 @@
     "docs": []
   },
   {
+    "namespace": [],
     "imports": [],
+    "servers": [],
     "tags": [],
     "definitions": [
       {
+        "category": "definition",
         "kind": "resource-like",
         "future": false,
         "singleton": false,
@@ -474,6 +487,7 @@
         "file": "field.reslang"
       },
       {
+        "category": "definition",
         "kind": "resource-like",
         "future": false,
         "singleton": false,
@@ -543,6 +557,7 @@
         "file": "field.reslang"
       },
       {
+        "category": "definition",
         "kind": "resource-like",
         "future": false,
         "singleton": false,
@@ -646,6 +661,7 @@
         "file": "field.reslang"
       },
       {
+        "category": "definition",
         "kind": "enum",
         "type": "enum",
         "parents": [],
@@ -661,6 +677,7 @@
         "file": "field.reslang"
       },
       {
+        "category": "definition",
         "kind": "enum",
         "type": "enum",
         "parents": [],
@@ -677,6 +694,7 @@
         "file": "field.reslang"
       },
       {
+        "category": "definition",
         "kind": "structure",
         "type": "structure",
         "parents": [],
@@ -721,10 +739,13 @@
     "docs": []
   },
   {
+    "namespace": [],
     "imports": [],
+    "servers": [],
     "tags": [],
     "definitions": [
       {
+        "category": "definition",
         "kind": "structure",
         "type": "structure",
         "parents": [],
@@ -826,23 +847,27 @@
     "docs": []
   },
   {
+    "namespace": [],
     "imports": [],
-    "servers": {
-      "rest": [
-        {
-          "url": "https://api.liveramp.com",
-          "environment": "PROD"
-        }
-      ],
-      "events": [
-        {
-          "comment": "Production Google Pubsub server",
-          "url": "http://pubsub.google.com",
-          "environment": "PROD",
-          "protocol": "GOOGLE_PUBSUB"
-        }
-      ]
-    },
+    "servers": [
+      {
+        "category": "servers",
+        "rest": [
+          {
+            "url": "https://api.liveramp.com",
+            "environment": "PROD"
+          }
+        ],
+        "events": [
+          {
+            "comment": "Production Google Pubsub server",
+            "url": "http://pubsub.google.com",
+            "environment": "PROD",
+            "protocol": "GOOGLE_PUBSUB"
+          }
+        ]
+      }
+    ],
     "tags": [],
     "definitions": [],
     "diagrams": [],

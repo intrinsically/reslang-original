@@ -8,7 +8,7 @@
 // - the variables are taken from variables passed in through the command line switch: --var port=8020
 
 servers = _ "servers" _ "{" _ rest:rest_servers? _ events:event_servers? _ "}" _ {
-    return { rest: rest, events: events }
+    return { category: "servers", rest: rest, events: events }
 }
 
 rest_servers = _ "/REST" _ servers:server+ {

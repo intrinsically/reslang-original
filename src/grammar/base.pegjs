@@ -2,7 +2,7 @@
 enum = _ comment:description? _ "enum"  _ name:name _ "{" _
     literals:literal+ _
 "}" _ ";"? _ {
-    return {"kind": "enum", "type": "enum", parents: [], "short": name, "comment": comment, "literals": literals}
+    return {category: "definition", "kind": "enum", "type": "enum", parents: [], "short": name, "comment": comment, "literals": literals}
 }
 literal = _ comment:description? _ name:literalname _ ";"? _ { return name }
 literalname "literalname" = name:([a-zA-Z0-9_:\-]+) { return name.flat().join(""); }
@@ -49,7 +49,7 @@ multi = "/*" inner:(!"*/" i:. {return i})* "*/"
 
 // documentation
 docs = _ "docs" _ name:resname _ "{" _ docEntries:docEntry* _ "}" _ {
-    return {name:name, entries:docEntries}
+    return {category: "docs", name:name, entries:docEntries}
 }
 
 docEntry = _ name:resname _ "=" _ doc:description _ {

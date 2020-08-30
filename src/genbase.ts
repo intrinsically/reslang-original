@@ -268,29 +268,32 @@ export abstract class BaseGen {
                 lst.namespace
             )
             this.parsed.push(local)
-            if (local.namespace && main) {
-                if (!this.namespace) {
-                    this.namespace = local.namespace
-                } else {
-                    throw new Error(
-                        "Cannot specify more than one namespace in a module: " +
-                            local.namespace
-                    )
-                }
-            }
+            if (main) {
+                // set the namespace and complain if we have more than 1
+                local.namespace.forEach((space) => {
+                    if (!this.namespace) {
+                        this.namespace = space
+                    } else {
+                        throw new Error(
+                            "Cannot specify more than one namespace in a module: " +
+                                space
+                        )
+                    }
+                })
 
-            // complain if we have more than 1 server block
-            if (local.servers && main) {
-                if (!this.servers) {
-                    this.servers = local.servers
-                    // fix up server block vars
-                    replaceServerVars(this.vars, this.servers)
-                } else {
-                    throw new Error(
-                        "Cannot specify more than one server block in a model: " +
-                            local.servers
-                    )
-                }
+                // set the server block and complain if we have more than 1
+                local.servers.forEach((servers) => {
+                    if (!this.servers) {
+                        this.servers = servers
+                        // fix up server block vars
+                        replaceServerVars(this.vars, this.servers)
+                    } else {
+                        throw new Error(
+                            "Cannot specify more than one server block in a model: " +
+                                local.servers
+                        )
+                    }
+                })
             }
 
             // handle any imports

@@ -14,6 +14,7 @@ event = _ comment:description? _ "event" _ name:resname _ "{" _
 "}" _ ";"? _ {
 
     return {
+        category: "definition",
         kind: "event",
         type: "event",
         comment: comment,
@@ -34,6 +35,7 @@ payload = _ "/payload" _ attrs:attributes+ _ {
 
 produces = _ "produces" _ name:ref {
     return {
+        category: "definition",
         kind: "produces",
         type: "produces",
         parents: [],
@@ -44,6 +46,7 @@ produces = _ "produces" _ name:ref {
 
 consumes = _ "consumes" _ name:ref {
     return {
+        category: "definition",
         kind: "consumes",
         type: "consumes",
         parents: [],

@@ -9,7 +9,6 @@ import {
     AnyKind,
     isProduces,
     isConsumes,
-    IImport,
     ITag
 } from "./treetypes"
 import * as path from "path"
@@ -45,13 +44,13 @@ export function loadParser() {
 }
 
 export interface IParseTree {
-    namespace?: any
-    imports?: any[]
-    servers?: any
-    tags?: any[]
-    definitions?: any[]
-    diagrams?: any[]
-    docs?: any[]
+    namespace: any[]
+    imports: any[]
+    servers: any[]
+    tags: any[]
+    definitions: any[]
+    diagrams: any[]
+    docs: any[]
 }
 
 export function parseFile(
@@ -84,14 +83,15 @@ export function parseFile(
             `Problem parsing file ${file}: ${error.message}, ${loc}`
         )
     }
+
     const parsed: IParseTree = {
-        namespace: tree[0],
-        imports: tree[1],
-        servers: tree[2],
-        tags: tree[3],
-        definitions: tree[4],
-        diagrams: tree[5],
-        docs: tree[6]
+        namespace: filter(tree, "namespace"),
+        imports: filter(tree, "import"),
+        servers: filter(tree, "servers"),
+        tags: filter(tree, "tag"),
+        definitions: filter(tree, "definition"),
+        diagrams: filter(tree, "diagram"),
+        docs: filter(tree, "docs")
     }
     addNamespace(
         parsed.definitions as AnyKind[],
@@ -113,6 +113,14 @@ export function parseFile(
     }
 
     return parsed
+}
+
+// filter out the entries to ensure they are in the right category
+function filter(entries: any, category: string) {
+    if (!Array.isArray(entries)) {
+        return entries.category === category ? [entries] : []
+    }
+    return (entries as any[]).filter((entry) => entry.category === category)
 }
 
 // create name, parentName and parentShort from the module, parents and short fields

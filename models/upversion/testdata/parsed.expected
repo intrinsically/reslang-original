@@ -1,22 +1,29 @@
 [
   {
-    "namespace": {
-      "comment": "This is the description of the API",
-      "title": "An API showing evolution",
-      "version": "1.1.2"
-    },
+    "namespace": [
+      {
+        "category": "namespace",
+        "comment": "This is the description of the API",
+        "title": "An API showing evolution",
+        "version": "1.1.2"
+      }
+    ],
     "imports": [],
+    "servers": [],
     "tags": [],
     "definitions": [],
     "diagrams": [],
     "docs": []
   },
   {
+    "namespace": [],
     "imports": [],
+    "servers": [],
     "tags": [],
     "definitions": [],
     "diagrams": [
       {
+        "category": "diagram",
         "diagram": "main",
         "include": [
           {
@@ -34,10 +41,13 @@
     "docs": []
   },
   {
+    "namespace": [],
     "imports": [],
+    "servers": [],
     "tags": [],
     "definitions": [
       {
+        "category": "definition",
         "kind": "resource-like",
         "future": false,
         "singleton": false,
@@ -168,6 +178,7 @@
         "file": "upversion.reslang"
       },
       {
+        "category": "definition",
         "kind": "resource-like",
         "future": false,
         "singleton": false,
@@ -252,6 +263,7 @@
         "file": "upversion.reslang"
       },
       {
+        "category": "definition",
         "kind": "resource-like",
         "future": false,
         "singleton": false,
@@ -332,6 +344,7 @@
         "file": "upversion.reslang"
       },
       {
+        "category": "definition",
         "kind": "resource-like",
         "future": false,
         "singleton": false,
@@ -417,10 +430,13 @@
     "docs": []
   },
   {
+    "namespace": [],
     "imports": [],
+    "servers": [],
     "tags": [],
     "definitions": [
       {
+        "category": "definition",
         "kind": "structure",
         "type": "structure",
         "parents": [],
@@ -522,23 +538,27 @@
     "docs": []
   },
   {
+    "namespace": [],
     "imports": [],
-    "servers": {
-      "rest": [
-        {
-          "url": "https://api.liveramp.com",
-          "environment": "PROD"
-        }
-      ],
-      "events": [
-        {
-          "comment": "Production Google Pubsub server",
-          "url": "http://pubsub.google.com",
-          "environment": "PROD",
-          "protocol": "GOOGLE_PUBSUB"
-        }
-      ]
-    },
+    "servers": [
+      {
+        "category": "servers",
+        "rest": [
+          {
+            "url": "https://api.liveramp.com",
+            "environment": "PROD"
+          }
+        ],
+        "events": [
+          {
+            "comment": "Production Google Pubsub server",
+            "url": "http://pubsub.google.com",
+            "environment": "PROD",
+            "protocol": "GOOGLE_PUBSUB"
+          }
+        ]
+      }
+    ],
     "tags": [],
     "definitions": [],
     "diagrams": [],

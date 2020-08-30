@@ -1,23 +1,30 @@
 [
   {
-    "namespace": {
-      "comment": "API for simple events",
-      "space": "andrew/simple-example",
-      "title": "Simple events",
-      "version": "0.0.1"
-    },
+    "namespace": [
+      {
+        "category": "namespace",
+        "comment": "API for simple events",
+        "space": "andrew/simple-example",
+        "title": "Simple events",
+        "version": "0.0.1"
+      }
+    ],
     "imports": [],
+    "servers": [],
     "tags": [],
     "definitions": [],
     "diagrams": [],
     "docs": []
   },
   {
+    "namespace": [],
     "imports": [],
+    "servers": [],
     "tags": [],
     "definitions": [],
     "diagrams": [
       {
+        "category": "diagram",
         "diagram": "main",
         "include": [
           {
@@ -35,14 +42,18 @@
     "docs": []
   },
   {
+    "namespace": [],
     "imports": [
       {
+        "category": "import",
         "import": "file"
       }
     ],
+    "servers": [],
     "tags": [],
     "definitions": [
       {
+        "category": "definition",
         "kind": "resource-like",
         "comment": "A simple REST resource",
         "future": false,
@@ -132,6 +143,7 @@
         "file": "events.reslang"
       },
       {
+        "category": "definition",
         "kind": "resource-like",
         "comment": "A test REST resource",
         "future": false,
@@ -251,6 +263,7 @@
         "file": "events.reslang"
       },
       {
+        "category": "definition",
         "kind": "resource-like",
         "comment": "A REST subresource",
         "future": false,
@@ -337,6 +350,7 @@
         "file": "events.reslang"
       },
       {
+        "category": "definition",
         "kind": "resource-like",
         "future": false,
         "singleton": false,
@@ -421,6 +435,7 @@
         "file": "events.reslang"
       },
       {
+        "category": "definition",
         "kind": "event",
         "type": "event",
         "comment": "Event to start",
@@ -553,6 +568,7 @@
         "file": "events.reslang"
       },
       {
+        "category": "definition",
         "kind": "produces",
         "type": "produces",
         "parents": [],
@@ -571,6 +587,7 @@
         "file": "events.reslang"
       },
       {
+        "category": "definition",
         "kind": "event",
         "type": "event",
         "comment": "Event to stop",
@@ -641,6 +658,7 @@
         "file": "events.reslang"
       },
       {
+        "category": "definition",
         "kind": "consumes",
         "type": "consumes",
         "parents": [],
@@ -659,6 +677,7 @@
         "file": "events.reslang"
       },
       {
+        "category": "definition",
         "kind": "produces",
         "type": "produces",
         "parents": [],
@@ -678,6 +697,7 @@
         "file": "events.reslang"
       },
       {
+        "category": "definition",
         "kind": "structure",
         "type": "structure",
         "parents": [],
@@ -749,23 +769,30 @@
     "docs": []
   },
   {
-    "namespace": {
-      "comment": "This is a simple API for manipulating files",
-      "title": "API for modeling directories and files",
-      "version": "1.0.0"
-    },
+    "namespace": [
+      {
+        "category": "namespace",
+        "comment": "This is a simple API for manipulating files",
+        "title": "API for modeling directories and files",
+        "version": "1.0.0"
+      }
+    ],
     "imports": [],
+    "servers": [],
     "tags": [],
     "definitions": [],
     "diagrams": [],
     "docs": []
   },
   {
+    "namespace": [],
     "imports": [],
+    "servers": [],
     "tags": [],
     "definitions": [],
     "diagrams": [
       {
+        "category": "diagram",
         "diagram": "main",
         "include": [
           {
@@ -783,12 +810,15 @@
     "docs": []
   },
   {
+    "namespace": [],
     "imports": [],
+    "servers": [],
     "tags": [],
     "definitions": [],
     "diagrams": [],
     "docs": [
       {
+        "category": "docs",
         "name": "FileDocs",
         "entries": [
           {
@@ -800,9 +830,12 @@
     ]
   },
   {
+    "namespace": [],
     "imports": [],
+    "servers": [],
     "tags": [
       {
+        "category": "tag",
         "comment": "This is a serious tag\nA really serious one...",
         "name": "Files and other arrangements",
         "include": [
@@ -825,6 +858,7 @@
         ]
       },
       {
+        "category": "tag",
         "comment": "This is a another tag: See docs: FileDocs.DirectoryTag",
         "name": "Directories and other musings",
         "include": [
@@ -847,6 +881,7 @@
     ],
     "definitions": [
       {
+        "category": "definition",
         "kind": "resource-like",
         "comment": "This models a directory we might create",
         "future": false,
@@ -932,6 +967,7 @@
         "file": "file.reslang"
       },
       {
+        "category": "definition",
         "kind": "resource-like",
         "comment": "This configures up a file type, e.g. .gif",
         "future": false,
@@ -1103,6 +1139,7 @@
         "file": "file.reslang"
       },
       {
+        "category": "definition",
         "kind": "resource-like",
         "future": true,
         "singleton": false,
@@ -1146,6 +1183,7 @@
         "file": "file.reslang"
       },
       {
+        "category": "definition",
         "kind": "resource-like",
         "comment": "This models a file in a directory",
         "future": false,
@@ -1321,6 +1359,7 @@
         "file": "file.reslang"
       },
       {
+        "category": "definition",
         "kind": "resource-like",
         "comment": "This models a long running request",
         "future": false,
@@ -1427,6 +1466,7 @@
         "file": "file.reslang"
       },
       {
+        "category": "definition",
         "kind": "event",
         "type": "event",
         "comment": "If a deletion is corrupted, we generate this event",
@@ -1524,6 +1564,7 @@
         "file": "file.reslang"
       },
       {
+        "category": "definition",
         "kind": "produces",
         "type": "produces",
         "parents": [],
@@ -1542,6 +1583,7 @@
         "file": "file.reslang"
       },
       {
+        "category": "definition",
         "kind": "resource-like",
         "comment": "This models an action on a request",
         "future": false,
@@ -1638,6 +1680,7 @@
         "file": "file.reslang"
       },
       {
+        "category": "definition",
         "kind": "structure",
         "type": "structure",
         "parents": [],
@@ -1740,10 +1783,13 @@
     "docs": []
   },
   {
+    "namespace": [],
     "imports": [],
+    "servers": [],
     "tags": [],
     "definitions": [
       {
+        "category": "definition",
         "kind": "structure",
         "type": "structure",
         "parents": [],
@@ -1845,33 +1891,40 @@
     "docs": []
   },
   {
+    "namespace": [],
     "imports": [],
-    "servers": {
-      "rest": [
-        {
-          "url": "https://api.liveramp.com",
-          "environment": "PROD"
-        }
-      ],
-      "events": [
-        {
-          "comment": "Production Google Pubsub server",
-          "url": "http://pubsub.google.com",
-          "environment": "PROD",
-          "protocol": "GOOGLE_PUBSUB"
-        }
-      ]
-    },
+    "servers": [
+      {
+        "category": "servers",
+        "rest": [
+          {
+            "url": "https://api.liveramp.com",
+            "environment": "PROD"
+          }
+        ],
+        "events": [
+          {
+            "comment": "Production Google Pubsub server",
+            "url": "http://pubsub.google.com",
+            "environment": "PROD",
+            "protocol": "GOOGLE_PUBSUB"
+          }
+        ]
+      }
+    ],
     "tags": [],
     "definitions": [],
     "diagrams": [],
     "docs": []
   },
   {
+    "namespace": [],
     "imports": [],
+    "servers": [],
     "tags": [],
     "definitions": [
       {
+        "category": "definition",
         "kind": "structure",
         "type": "structure",
         "parents": [],
@@ -1973,23 +2026,27 @@
     "docs": []
   },
   {
+    "namespace": [],
     "imports": [],
-    "servers": {
-      "rest": [
-        {
-          "url": "https://api.liveramp.com",
-          "environment": "PROD"
-        }
-      ],
-      "events": [
-        {
-          "comment": "Production Google Pubsub server",
-          "url": "http://pubsub.google.com",
-          "environment": "PROD",
-          "protocol": "GOOGLE_PUBSUB"
-        }
-      ]
-    },
+    "servers": [
+      {
+        "category": "servers",
+        "rest": [
+          {
+            "url": "https://api.liveramp.com",
+            "environment": "PROD"
+          }
+        ],
+        "events": [
+          {
+            "comment": "Production Google Pubsub server",
+            "url": "http://pubsub.google.com",
+            "environment": "PROD",
+            "protocol": "GOOGLE_PUBSUB"
+          }
+        ]
+      }
+    ],
     "tags": [],
     "definitions": [],
     "diagrams": [],

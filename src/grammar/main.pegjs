@@ -29,13 +29,14 @@
 }
 
 
-reslang = namespacedefinition? import* servers? tag* (resource / subresource / action / structure / enum / event / produces / consumes )* diagram* docs*
+reslang = (namespacedefinition / import / servers / tag / resource / subresource /
+            action / structure / enum / event / produces / consumes / diagram / docs)*
 
 // defining a namespace
 namespacedefinition = _ comment:description? _ "namespace" _ space:space? _ "{"
     _ "title" _ title:description _
     _ "version" _ version:semver _ "}" _ ";"? _ {
-    return {"comment":comment, space: space, "title": title, "version": version}
+    return {category: "namespace", "comment":comment, space: space, "title": title, "version": version}
 }
 
 space = _ space:[a-zA-Z0-9\-_\/]+ _ {
@@ -44,6 +45,6 @@ space = _ space:[a-zA-Z0-9\-_\/]+ _ {
 
 // import from another module
 import "import" = _ "import" _ namespace:filename _ ";"? _ {
-    return {"import": namespace}
+    return {category: "import", "import": namespace}
 }
 

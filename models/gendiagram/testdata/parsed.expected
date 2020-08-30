@@ -1,22 +1,29 @@
 [
   {
-    "namespace": {
-      "comment": "A textual name under the client's control.\nThis value may be used to assign a meaningful name\n\n\nto the associated configuration.  The value is not\nrequired to be unique, but the client is encouraged\nto use the value to identify configurations.\n\n    this is code\n\t\twhat do you think\n\n",
-      "title": "API for modeling directories and files",
-      "version": "1.0.0"
-    },
+    "namespace": [
+      {
+        "category": "namespace",
+        "comment": "A textual name under the client's control.\nThis value may be used to assign a meaningful name\n\n\nto the associated configuration.  The value is not\nrequired to be unique, but the client is encouraged\nto use the value to identify configurations.\n\n    this is code\n\t\twhat do you think\n\n",
+        "title": "API for modeling directories and files",
+        "version": "1.0.0"
+      }
+    ],
     "imports": [],
+    "servers": [],
     "tags": [],
     "definitions": [],
     "diagrams": [],
     "docs": []
   },
   {
+    "namespace": [],
     "imports": [],
+    "servers": [],
     "tags": [],
     "definitions": [],
     "diagrams": [
       {
+        "category": "diagram",
         "diagram": "main",
         "includeAll": "segment-delivery.reslang",
         "exclude": [
@@ -63,6 +70,7 @@
         "groups": []
       },
       {
+        "category": "diagram",
         "diagram": "data",
         "includeAll": "segment-delivery.reslang",
         "exclude": [
@@ -165,6 +173,7 @@
         "groups": []
       },
       {
+        "category": "diagram",
         "diagram": "deliveries",
         "includeAll": "segment-delivery.reslang",
         "exclude": [
@@ -281,10 +290,13 @@
     "docs": []
   },
   {
+    "namespace": [],
     "imports": [],
+    "servers": [],
     "tags": [],
     "definitions": [
       {
+        "category": "definition",
         "kind": "resource-like",
         "future": false,
         "singleton": false,
@@ -602,6 +614,7 @@
         "file": "segment-delivery.reslang"
       },
       {
+        "category": "definition",
         "kind": "resource-like",
         "future": false,
         "singleton": false,
@@ -653,6 +666,7 @@
         "file": "segment-delivery.reslang"
       },
       {
+        "category": "definition",
         "kind": "resource-like",
         "future": false,
         "singleton": false,
@@ -675,6 +689,7 @@
         "file": "segment-delivery.reslang"
       },
       {
+        "category": "definition",
         "kind": "resource-like",
         "future": false,
         "singleton": false,
@@ -697,6 +712,7 @@
         "file": "segment-delivery.reslang"
       },
       {
+        "category": "definition",
         "kind": "resource-like",
         "future": false,
         "singleton": false,
@@ -867,6 +883,7 @@
         "file": "segment-delivery.reslang"
       },
       {
+        "category": "definition",
         "kind": "resource-like",
         "future": false,
         "singleton": false,
@@ -1261,6 +1278,7 @@
         "file": "segment-delivery.reslang"
       },
       {
+        "category": "definition",
         "kind": "resource-like",
         "future": false,
         "singleton": false,
@@ -1284,6 +1302,7 @@
         "file": "segment-delivery.reslang"
       },
       {
+        "category": "definition",
         "kind": "resource-like",
         "future": false,
         "singleton": false,
@@ -1307,6 +1326,7 @@
         "file": "segment-delivery.reslang"
       },
       {
+        "category": "definition",
         "kind": "resource-like",
         "future": false,
         "singleton": false,
@@ -1476,6 +1496,7 @@
         "file": "segment-delivery.reslang"
       },
       {
+        "category": "definition",
         "kind": "resource-like",
         "future": false,
         "singleton": false,
@@ -1713,6 +1734,7 @@
         "file": "segment-delivery.reslang"
       },
       {
+        "category": "definition",
         "kind": "resource-like",
         "future": false,
         "singleton": false,
@@ -1797,6 +1819,7 @@
         "file": "segment-delivery.reslang"
       },
       {
+        "category": "definition",
         "kind": "resource-like",
         "future": false,
         "singleton": false,
@@ -1881,6 +1904,7 @@
         "file": "segment-delivery.reslang"
       },
       {
+        "category": "definition",
         "kind": "resource-like",
         "future": false,
         "singleton": false,
@@ -2123,6 +2147,7 @@
         "file": "segment-delivery.reslang"
       },
       {
+        "category": "definition",
         "kind": "resource-like",
         "future": false,
         "singleton": false,
@@ -2417,6 +2442,7 @@
         "file": "segment-delivery.reslang"
       },
       {
+        "category": "definition",
         "kind": "enum",
         "type": "enum",
         "parents": [],
@@ -2433,6 +2459,7 @@
         "file": "segment-delivery.reslang"
       },
       {
+        "category": "definition",
         "kind": "structure",
         "type": "structure",
         "parents": [],
@@ -2527,6 +2554,7 @@
         "file": "segment-delivery.reslang"
       },
       {
+        "category": "definition",
         "kind": "structure",
         "type": "structure",
         "parents": [],
@@ -2625,6 +2653,7 @@
         "file": "segment-delivery.reslang"
       },
       {
+        "category": "definition",
         "kind": "enum",
         "type": "enum",
         "parents": [],
@@ -2654,6 +2683,7 @@
         "file": "segment-delivery.reslang"
       },
       {
+        "category": "definition",
         "kind": "structure",
         "type": "structure",
         "parents": [],
@@ -2721,6 +2751,7 @@
         "file": "segment-delivery.reslang"
       },
       {
+        "category": "definition",
         "kind": "structure",
         "type": "structure",
         "parents": [],
@@ -2761,6 +2792,7 @@
         "file": "segment-delivery.reslang"
       },
       {
+        "category": "definition",
         "kind": "union",
         "type": "union",
         "parents": [],
@@ -2828,6 +2860,7 @@
         "file": "segment-delivery.reslang"
       },
       {
+        "category": "definition",
         "kind": "enum",
         "type": "enum",
         "parents": [],
@@ -2844,6 +2877,7 @@
         "file": "segment-delivery.reslang"
       },
       {
+        "category": "definition",
         "kind": "enum",
         "type": "enum",
         "parents": [],
@@ -2862,6 +2896,7 @@
         "file": "segment-delivery.reslang"
       },
       {
+        "category": "definition",
         "kind": "enum",
         "type": "enum",
         "parents": [],
@@ -2878,6 +2913,7 @@
         "file": "segment-delivery.reslang"
       },
       {
+        "category": "definition",
         "kind": "enum",
         "type": "enum",
         "parents": [],
@@ -2897,6 +2933,7 @@
         "file": "segment-delivery.reslang"
       },
       {
+        "category": "definition",
         "kind": "structure",
         "type": "structure",
         "parents": [],
@@ -3018,6 +3055,7 @@
         "file": "segment-delivery.reslang"
       },
       {
+        "category": "definition",
         "kind": "enum",
         "type": "enum",
         "parents": [],
@@ -3037,10 +3075,13 @@
     "docs": []
   },
   {
+    "namespace": [],
     "imports": [],
+    "servers": [],
     "tags": [],
     "definitions": [
       {
+        "category": "definition",
         "kind": "structure",
         "type": "structure",
         "parents": [],
@@ -3142,23 +3183,27 @@
     "docs": []
   },
   {
+    "namespace": [],
     "imports": [],
-    "servers": {
-      "rest": [
-        {
-          "url": "https://api.liveramp.com",
-          "environment": "PROD"
-        }
-      ],
-      "events": [
-        {
-          "comment": "Production Google Pubsub server",
-          "url": "http://pubsub.google.com",
-          "environment": "PROD",
-          "protocol": "GOOGLE_PUBSUB"
-        }
-      ]
-    },
+    "servers": [
+      {
+        "category": "servers",
+        "rest": [
+          {
+            "url": "https://api.liveramp.com",
+            "environment": "PROD"
+          }
+        ],
+        "events": [
+          {
+            "comment": "Production Google Pubsub server",
+            "url": "http://pubsub.google.com",
+            "environment": "PROD",
+            "protocol": "GOOGLE_PUBSUB"
+          }
+        ]
+      }
+    ],
     "tags": [],
     "definitions": [],
     "diagrams": [],
