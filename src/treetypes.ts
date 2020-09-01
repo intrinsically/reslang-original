@@ -42,6 +42,7 @@ export let PrimitiveType = [
     "datetime",
     "duration",
     "url",
+    "uri",
     "uuid"
 ]
 

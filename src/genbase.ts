@@ -925,6 +925,14 @@ Actions cannot have subresources`
                     schema.example = "https://www.domain.com (url)"
                 }
                 break
+            case "uri":
+                this.addDefault(attr, schema, "string")
+                schema.type = "string"
+                schema.format = "uri"
+                if (example) {
+                    schema.example = "urn:isbn:0-486-27557-4"
+                }
+                break
             case "int":
                 this.addDefault(attr, schema, "int")
                 schema.type = "integer"

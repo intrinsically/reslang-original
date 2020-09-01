@@ -24,6 +24,7 @@ structure Manufacturer {
 	homeArray: url[] example: "Array of urls"
 	timeToManufacture: duration optional default = "P4D"
 	other: url
+	other2: uri
 }
 
 "A resource with no ID"

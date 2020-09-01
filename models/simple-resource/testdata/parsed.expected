@@ -325,6 +325,33 @@
               "representation": false
             },
             "constraints": {}
+          },
+          {
+            "name": "other2",
+            "stringMap": false,
+            "type": {
+              "parents": [],
+              "short": "uri",
+              "name": "uri",
+              "parentShort": "",
+              "parentName": ""
+            },
+            "inline": false,
+            "linked": false,
+            "full": false,
+            "modifiers": {
+              "flag": false,
+              "mutable": false,
+              "optional": false,
+              "optionalPost": false,
+              "optionalPut": false,
+              "optionalGet": false,
+              "output": false,
+              "queryonly": false,
+              "query": false,
+              "representation": false
+            },
+            "constraints": {}
           }
         ],
         "name": "Manufacturer",

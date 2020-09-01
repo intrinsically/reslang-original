@@ -308,11 +308,16 @@ components:
           type: string
           format: url
           example: 'https://www.domain.com (url)'
+        other2:
+          type: string
+          format: uri
+          example: 'urn:isbn:0-486-27557-4'
       required:
         - company
         - home
         - homeArray
         - other
+        - other2
       description: This is a manufacturer
     CarInput:
       type: object

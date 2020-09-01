@@ -323,7 +323,6 @@ export default class SwagGen extends BaseGen {
             }
         }
         if (ops.multipost) {
-            console.log("Multipost")
             const content = {
                 "application/json": {
                     schema: {
