@@ -349,6 +349,7 @@
           {
             "operation": "GET",
             "comment": "Find a single existing Field in the provided parent Audience.\nNote: this only works for core fields (raw string, raw numeric, string enum, and numeric enum).\nAll fields of other types will not be included in the response.",
+            "options": [],
             "errors": [
               {
                 "codes": [
@@ -370,6 +371,7 @@
           {
             "operation": "POST",
             "comment": "Create a new Field in the provided parent Audience.",
+            "options": [],
             "errors": [
               {
                 "codes": [
@@ -421,6 +423,7 @@
           {
             "operation": "MULTIGET",
             "comment": "Find existing Fields in the provided parent Audience.\nNote: this only works for core fields (raw string, raw numeric, string enum, and numeric enum).\nAll fields of other types will not be included in the response.",
+            "options": [],
             "errors": [
               {
                 "codes": [
@@ -442,6 +445,7 @@
           {
             "operation": "PUT",
             "comment": "Modify the attributes of a Field in the provided parent Audience.\nCurrently the only supported operation is adding values to enumerated Fields.\nThe list of values passed in will be added to the Field's existing set of values.",
+            "options": [],
             "errors": [
               {
                 "codes": [
@@ -526,6 +530,7 @@
           {
             "operation": "POST",
             "comment": "Marks a Field as 'disabled', which means that it will no longer\nbe processed in the audience, will no longer be deliverable,\nand will no longer have stats calculated for it.\nNote: this only works for core fields (raw string, raw numeric, string enum, and numeric enum).\nAttempting to disable any other type of field will trigger a 404 Not Found response.",
+            "options": [],
             "errors": [
               {
                 "codes": [
@@ -629,6 +634,7 @@
           {
             "operation": "POST",
             "comment": "Marks the set of input Fields 'disabled', which means that they will no longer\nbe processed in the audience, will no longer be deliverable,\nand will no longer have stats calculated for them.\nNote: this only works for core fields (raw string, raw numeric, string enum, and numeric enum).\nAttempting to disable any other type of field will trigger a 404 Not Found response.",
+            "options": [],
             "errors": [
               {
                 "codes": [
@@ -861,7 +867,7 @@
         "events": [
           {
             "comment": "Production Google Pubsub server",
-            "url": "http://pubsub.google.com",
+            "url": "https://pubsub.googleapis.com/v1/projects/liveramp-events-prod",
             "environment": "PROD",
             "protocol": "GOOGLE_PUBSUB"
           }

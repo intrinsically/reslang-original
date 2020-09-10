@@ -55,7 +55,7 @@ errorcode = _ comment:description? _ code:[0-9]+ {
     return {"code": code.join(""), "comment": comment}
 }
 
-ops = _ comment:description? _ op:(mainops / multiops) _ {return {"operation": op, "comment": comment}}
+ops = _ comment:description? _ op:(mainops / multiops) _ options:options _ {return {"operation": op, "comment": comment, "options": options}}
 eventops = _ comment:description? _ op:(mainops / ([a-z_]+[_a-z0-9]*)) _ {return {"operation": Array.isArray(op) ? op.flat().join("") : op, "comment": comment}}
 oplist = op:("GET" / "MULTIGET" / "PUT" / "MULTIPUT" / "PATCH" / "MULTIPATCH" / "POST" / "MULTIPOST" / "DELETE"/ "MULTIDELETE") {
     return op
@@ -65,6 +65,12 @@ mainops = op:("GET" / "PUT" / "PATCH" / "POST" / "DELETE") {
 }
 multiops = op:("MULTIGET" / "MULTIPUT" / "MULTIPATCH" / "MULTIPOST" / "MULTIDELETE") {
     return op
+}
+options = options:option* {
+    return options
+}
+option = _ name:[a-z_\-]+ _ "=" _ value:[a-zA-Z0-9_\-]+ _ {
+    return {name: name.join(""), value: value.join("")}
 }
 
 ids "ids" = ids:id+ {return ids}

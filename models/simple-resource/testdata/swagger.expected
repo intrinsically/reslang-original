@@ -72,9 +72,7 @@ paths:
             minimum: 0
         - in: query
           name: limit
-          description: >-
-            Number of Garages to return. If unspecified, 10 max will be
-            returned. Maximum value for limit can be 100
+          description: Number of Garages to return
           schema:
             type: integer
             format: int32
@@ -237,9 +235,7 @@ paths:
             minimum: 0
         - in: query
           name: limit
-          description: >-
-            Number of Bars to return. If unspecified, 10 max will be returned.
-            Maximum value for limit can be 100
+          description: Number of Bars to return
           schema:
             type: integer
             format: int32

@@ -5,5 +5,8 @@
     "onlyConfigToConfig": true,
     "noSubresourcesOnActions": true,
     "links": "IDs",
-    "returnBodyOnUpdate": false
+    "returnBodyOnUpdate": false,
+    "pagination": "offset",
+    "limit": 10,
+    "maxLimit": 100
 }

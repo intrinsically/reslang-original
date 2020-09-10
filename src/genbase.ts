@@ -22,7 +22,6 @@ import {
     isConsumes,
     isAction,
     isUnion,
-    getAllAttributes,
     ITag
 } from "./treetypes"
 import { parseFile, isPrimitiveType, IParseTree } from "./parse"
@@ -140,7 +139,7 @@ export abstract class BaseGen {
 
     public constructor(
         private dirs: string[],
-        private rules: IRules,
+        protected rules: IRules,
         protected environment: string = "PROD",
         protected vars: string = "",
         expandInlines = false,
@@ -149,6 +148,7 @@ export abstract class BaseGen {
     ) {
         this.processDefinitions()
         this.checkMandatoryRules()
+        this.checkOperationOptions()
         this.checkConfigurableRules()
         if (expandInlines) {
             this.expandInlines()
@@ -443,6 +443,61 @@ Configuration resources can only link to other configuration resources`
                         `RULE NO_ACTION_SUBRESOURCE violated: ${def.name}
 Actions cannot have subresources`
                     )
+                }
+            }
+        }
+    }
+
+    public checkOperationOptions() {
+        // check the options for operations are ok
+        for (const def of this.defs) {
+            // check that the operations have the correct options
+            if (isResourceLike(def)) {
+                for (const op of def.operations || []) {
+                    if (op.operation === "MULTIGET") {
+                        // only pagination and limit currently supported
+                        for (const option of op.options) {
+                            const name = option.name
+                            const val = option.value
+                            if (name === "pagination") {
+                                if (!["offset", "cursor", "none"]) {
+                                    throw new Error(
+                                        "MULTIGET of resource " +
+                                            def.name +
+                                            " must have pagination value of offset, cursor or none"
+                                    )
+                                }
+                            } else if (name === "limit") {
+                                // must be numeric
+                                if (isNaN(Number(val))) {
+                                    throw new Error(
+                                        "MULTIGET of resource " +
+                                            def.name +
+                                            " must have an integer limit value"
+                                    )
+                                }
+                            } else {
+                                throw new Error(
+                                    "Operation " +
+                                        op.operation +
+                                        " of resource " +
+                                        def.name +
+                                        " cannot have option " +
+                                        name
+                                )
+                            }
+                        }
+                    } else {
+                        if (op.options.length !== 0) {
+                            throw new Error(
+                                "Operation " +
+                                    op.operation +
+                                    " of resource " +
+                                    def.name +
+                                    " cannot have options"
+                            )
+                        }
+                    }
                 }
             }
         }

@@ -543,30 +543,48 @@ export default class SwagGen extends BaseGen {
         }
         const gparams = params.slice()
         if (ops.multiget) {
-            gparams.push({
-                in: "query",
-                name: "offset",
-                description: `Offset of the ${plural} (starting from 0) to include in the response.`,
-                schema: {
-                    type: "integer",
-                    format: "int32",
-                    default: 0,
-                    minimum: 0
-                }
-            })
-            gparams.push({
-                in: "query",
-                name: "limit",
-                description: `Number of ${plural} to return. If unspecified, 10 max will be returned.\
- Maximum value for limit can be 100`,
-                schema: {
-                    type: "integer",
-                    format: "int32",
-                    default: 10,
-                    minimum: 1,
-                    maximum: 100
-                }
-            })
+            const pagination = this.retrieveOption(ops.multiget, "pagination")
+            // limit has already been checked to be a number
+            const limit = Number(this.retrieveOption(ops.multiget, "limit"))
+            const maxLimit = Number(
+                this.retrieveOption(ops.multiget, "max-limit")
+            )
+            if (pagination === "offset") {
+                gparams.push({
+                    in: "query",
+                    name: "offset",
+                    description: `Offset of the ${plural} (starting from 0) to include in the response.`,
+                    schema: {
+                        type: "integer",
+                        format: "int32",
+                        default: 0,
+                        minimum: 0
+                    }
+                })
+            } else if (pagination === "after") {
+                gparams.push({
+                    in: "query",
+                    name: "after",
+                    description: `The value returned as X-Next-After in the previous query. Starts from beginning if not specified`,
+                    schema: {
+                        type: "string"
+                    }
+                })
+            }
+            if (pagination === "offset" || pagination === "after") {
+                gparams.push({
+                    in: "query",
+                    name: "limit",
+                    description: `Number of ${plural} to return`,
+                    schema: {
+                        type: "integer",
+                        format: "int32",
+                        default: limit,
+                        minimum: 1,
+                        maximum: maxLimit
+                    }
+                })
+            }
 
             for (const attr of el.attributes as IAttribute[]) {
                 if (
@@ -602,6 +620,12 @@ export default class SwagGen extends BaseGen {
                     }
                 }
             }
+            if (pagination === "after") {
+                responses["200"].headers["X-Next-After"] = {
+                    description: `The opaque token to set as "after" in the next query, to continue getting results. If it isn't present, there is no more data`,
+                    schema: { type: "string" }
+                }
+            }
             if (notFound) {
                 responses[404] = notFound
             }
@@ -618,6 +642,25 @@ export default class SwagGen extends BaseGen {
                 path.get.parameters = gparams
             }
         }
+    }
+
+    private retrieveOption(multiget: IOperation, optionName: string) {
+        // now see if we have set this value in the options
+        for (const option of multiget.options) {
+            if (option.name === optionName) {
+                return option.value
+            }
+        }
+        // see if we have something set in the global options
+        switch (optionName) {
+            case "pagination":
+                return this.rules.pagination
+            case "limit":
+                return this.rules.limit
+            case "max-limit":
+                return this.rules.maxLimit
+        }
+        return null
     }
 
     private addParentPathParam(

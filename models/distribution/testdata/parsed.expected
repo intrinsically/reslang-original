@@ -88,16 +88,19 @@
           {
             "operation": "POST",
             "comment": "Create a new destination",
+            "options": [],
             "errors": []
           },
           {
             "operation": "GET",
             "comment": "Retrieve a current destination",
+            "options": [],
             "errors": []
           },
           {
             "operation": "MULTIGET",
             "comment": "Get all destinations",
+            "options": [],
             "errors": []
           }
         ],
@@ -202,18 +205,22 @@
         "operations": [
           {
             "operation": "POST",
+            "options": [],
             "errors": []
           },
           {
             "operation": "PUT",
+            "options": [],
             "errors": []
           },
           {
             "operation": "GET",
+            "options": [],
             "errors": []
           },
           {
             "operation": "MULTIGET",
+            "options": [],
             "errors": []
           }
         ],
@@ -353,21 +360,25 @@
           {
             "operation": "POST",
             "comment": "Create an integration",
+            "options": [],
             "errors": []
           },
           {
             "operation": "PUT",
             "comment": "Alter an integration",
+            "options": [],
             "errors": []
           },
           {
             "operation": "GET",
             "comment": "Retrieve an integration",
+            "options": [],
             "errors": []
           },
           {
             "operation": "MULTIGET",
             "comment": "Retrieve many integrations",
+            "options": [],
             "errors": []
           }
         ],
@@ -755,18 +766,22 @@
         "operations": [
           {
             "operation": "POST",
+            "options": [],
             "errors": []
           },
           {
             "operation": "PUT",
+            "options": [],
             "errors": []
           },
           {
             "operation": "GET",
+            "options": [],
             "errors": []
           },
           {
             "operation": "MULTIGET",
+            "options": [],
             "errors": []
           }
         ],
@@ -967,14 +982,17 @@
         "operations": [
           {
             "operation": "POST",
+            "options": [],
             "errors": []
           },
           {
             "operation": "GET",
+            "options": [],
             "errors": []
           },
           {
             "operation": "MULTIGET",
+            "options": [],
             "errors": []
           }
         ],
@@ -1053,14 +1071,17 @@
         "operations": [
           {
             "operation": "POST",
+            "options": [],
             "errors": []
           },
           {
             "operation": "GET",
+            "options": [],
             "errors": []
           },
           {
             "operation": "MULTIGET",
+            "options": [],
             "errors": []
           }
         ],
@@ -1166,14 +1187,17 @@
         "operations": [
           {
             "operation": "POST",
+            "options": [],
             "errors": []
           },
           {
             "operation": "GET",
+            "options": [],
             "errors": []
           },
           {
             "operation": "MULTIGET",
+            "options": [],
             "errors": []
           }
         ],
@@ -1378,7 +1402,7 @@
         "events": [
           {
             "comment": "Production Google Pubsub server",
-            "url": "http://pubsub.google.com",
+            "url": "https://pubsub.googleapis.com/v1/projects/liveramp-events-prod",
             "environment": "PROD",
             "protocol": "GOOGLE_PUBSUB"
           }

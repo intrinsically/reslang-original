@@ -541,16 +541,19 @@
           {
             "operation": "GET",
             "comment": "Get a request. See docs: DistMVP.GET",
+            "options": [],
             "errors": []
           },
           {
             "operation": "POST",
             "comment": "Use this endpoint to create a new DistributionRequest",
+            "options": [],
             "errors": []
           },
           {
             "operation": "MULTIGET",
             "comment": "Use this endpoint to find existing DistributionRequests. See docs: DistMVP.MULTIGET",
+            "options": [],
             "errors": []
           }
         ],
@@ -603,6 +606,7 @@
         "operations": [
           {
             "operation": "POST",
+            "options": [],
             "errors": []
           }
         ],
@@ -656,6 +660,7 @@
         "operations": [
           {
             "operation": "POST",
+            "options": [],
             "errors": []
           }
         ],
@@ -1459,7 +1464,7 @@
         "events": [
           {
             "comment": "Production Google Pubsub server",
-            "url": "http://pubsub.google.com",
+            "url": "https://pubsub.googleapis.com/v1/projects/liveramp-events-prod",
             "environment": "PROD",
             "protocol": "GOOGLE_PUBSUB"
           }

@@ -92,9 +92,7 @@ paths:
             minimum: 0
         - in: query
           name: limit
-          description: >-
-            Number of SegmentDeliveryConfigurations to return. If unspecified,
-            10 max will be returned. Maximum value for limit can be 100
+          description: Number of SegmentDeliveryConfigurations to return
           schema:
             type: integer
             format: int32
@@ -505,9 +503,7 @@ paths:
             minimum: 0
         - in: query
           name: limit
-          description: >-
-            Number of DeliveryConfigurations to return. If unspecified, 10 max
-            will be returned. Maximum value for limit can be 100
+          description: Number of DeliveryConfigurations to return
           schema:
             type: integer
             format: int32
@@ -902,9 +898,7 @@ paths:
             minimum: 0
         - in: query
           name: limit
-          description: >-
-            Number of DataConfigurations to return. If unspecified, 10 max will
-            be returned. Maximum value for limit can be 100
+          description: Number of DataConfigurations to return
           schema:
             type: integer
             format: int32
@@ -1116,9 +1110,7 @@ paths:
             minimum: 0
         - in: query
           name: limit
-          description: >-
-            Number of DeliveryInstances to return. If unspecified, 10 max will
-            be returned. Maximum value for limit can be 100
+          description: Number of DeliveryInstances to return
           schema:
             type: integer
             format: int32
@@ -1213,9 +1205,7 @@ paths:
             minimum: 0
         - in: query
           name: limit
-          description: >-
-            Number of SegmentDeliveryAttempts to return. If unspecified, 10 max
-            will be returned. Maximum value for limit can be 100
+          description: Number of SegmentDeliveryAttempts to return
           schema:
             type: integer
             format: int32

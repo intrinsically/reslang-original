@@ -15,4 +15,9 @@ export interface IRules {
     actionsOnRequestsOnly?: boolean
     onlyConfigToConfig?: boolean
     noSubresourcesOnActions?: boolean
+
+    // pagination options
+    pagination: string
+    limit: number
+    maxLimit: number
 }

@@ -173,14 +173,17 @@
         "operations": [
           {
             "operation": "POST",
+            "options": [],
             "errors": []
           },
           {
             "operation": "GET",
+            "options": [],
             "errors": []
           },
           {
             "operation": "MULTIGET",
+            "options": [],
             "errors": []
           }
         ],
@@ -267,6 +270,7 @@
         "operations": [
           {
             "operation": "MULTIGET",
+            "options": [],
             "errors": []
           }
         ],
@@ -347,6 +351,7 @@
         "operations": [
           {
             "operation": "MULTIGET",
+            "options": [],
             "errors": []
           }
         ],
@@ -402,6 +407,7 @@
         "operations": [
           {
             "operation": "GET",
+            "options": [],
             "errors": []
           }
         ],
@@ -766,7 +772,7 @@
         "events": [
           {
             "comment": "Production Google Pubsub server",
-            "url": "http://pubsub.google.com",
+            "url": "https://pubsub.googleapis.com/v1/projects/liveramp-events-prod",
             "environment": "PROD",
             "protocol": "GOOGLE_PUBSUB"
           }

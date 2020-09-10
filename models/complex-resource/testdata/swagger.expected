@@ -63,9 +63,7 @@ paths:
             minimum: 0
         - in: query
           name: limit
-          description: >-
-            Number of Cars to return. If unspecified, 10 max will be returned.
-            Maximum value for limit can be 100
+          description: Number of Cars to return
           schema:
             type: integer
             format: int32
@@ -203,9 +201,7 @@ paths:
             minimum: 0
         - in: query
           name: limit
-          description: >-
-            Number of Wheels to return. If unspecified, 10 max will be returned.
-            Maximum value for limit can be 100
+          description: Number of Wheels to return
           schema:
             type: integer
             format: int32

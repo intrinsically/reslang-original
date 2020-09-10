@@ -140,10 +140,12 @@
         "operations": [
           {
             "operation": "POST",
+            "options": [],
             "errors": []
           },
           {
             "operation": "GET",
+            "options": [],
             "errors": []
           }
         ],

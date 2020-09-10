@@ -118,10 +118,12 @@
         "operations": [
           {
             "operation": "POST",
+            "options": [],
             "errors": []
           },
           {
             "operation": "GET",
+            "options": [],
             "errors": []
           }
         ],
@@ -235,10 +237,12 @@
         "operations": [
           {
             "operation": "POST",
+            "options": [],
             "errors": []
           },
           {
             "operation": "GET",
+            "options": [],
             "errors": []
           }
         ],
@@ -331,6 +335,7 @@
         "operations": [
           {
             "operation": "POST",
+            "options": [],
             "errors": []
           }
         ],
@@ -417,10 +422,12 @@
         "operations": [
           {
             "operation": "POST",
+            "options": [],
             "errors": []
           },
           {
             "operation": "GET",
+            "options": [],
             "errors": []
           }
         ],
@@ -945,15 +952,27 @@
         ],
         "operations": [
           {
+            "operation": "MULTIGET",
+            "options": [
+              {
+                "name": "pagination",
+                "value": "after"
+              },
+              {
+                "name": "limit",
+                "value": "20"
+              }
+            ],
+            "errors": []
+          },
+          {
             "operation": "GET",
+            "options": [],
             "errors": []
           },
           {
             "operation": "POST",
-            "errors": []
-          },
-          {
-            "operation": "MULTIGET",
+            "options": [],
             "errors": []
           }
         ],
@@ -1087,6 +1106,7 @@
           {
             "operation": "GET",
             "comment": "Get a FileType",
+            "options": [],
             "errors": [
               {
                 "codes": [
@@ -1122,10 +1142,12 @@
           },
           {
             "operation": "POST",
+            "options": [],
             "errors": []
           },
           {
             "operation": "MULTIGET",
+            "options": [],
             "errors": []
           }
         ],
@@ -1329,14 +1351,17 @@
         "operations": [
           {
             "operation": "GET",
+            "options": [],
             "errors": []
           },
           {
             "operation": "POST",
+            "options": [],
             "errors": []
           },
           {
             "operation": "MULTIGET",
+            "options": [],
             "errors": []
           }
         ],
@@ -1424,6 +1449,7 @@
         "operations": [
           {
             "operation": "GET",
+            "options": [],
             "errors": [
               {
                 "codes": [
@@ -1444,10 +1470,12 @@
           },
           {
             "operation": "POST",
+            "options": [],
             "errors": []
           },
           {
             "operation": "MULTIGET",
+            "options": [],
             "errors": []
           }
         ],
@@ -1649,6 +1677,7 @@
         "operations": [
           {
             "operation": "POST",
+            "options": [],
             "errors": [
               {
                 "codes": [
@@ -1905,7 +1934,7 @@
         "events": [
           {
             "comment": "Production Google Pubsub server",
-            "url": "http://pubsub.google.com",
+            "url": "https://pubsub.googleapis.com/v1/projects/liveramp-events-prod",
             "environment": "PROD",
             "protocol": "GOOGLE_PUBSUB"
           }
@@ -2040,7 +2069,7 @@
         "events": [
           {
             "comment": "Production Google Pubsub server",
-            "url": "http://pubsub.google.com",
+            "url": "https://pubsub.googleapis.com/v1/projects/liveramp-events-prod",
             "environment": "PROD",
             "protocol": "GOOGLE_PUBSUB"
           }

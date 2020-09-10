@@ -263,8 +263,14 @@ export interface IEventOperation {
 
 export interface IOperation {
     operation: string
+    options: IOption[]
     comment: string
     errors: IError[]
+}
+
+export interface IOption {
+    name: string
+    value: string
 }
 
 export interface IError {

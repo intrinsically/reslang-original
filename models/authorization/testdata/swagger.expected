@@ -69,9 +69,7 @@ paths:
             minimum: 0
         - in: query
           name: limit
-          description: >-
-            Number of Users to return. If unspecified, 10 max will be returned.
-            Maximum value for limit can be 100
+          description: Number of Users to return
           schema:
             type: integer
             format: int32
@@ -231,9 +229,7 @@ paths:
             minimum: 0
         - in: query
           name: limit
-          description: >-
-            Number of Organizations to return. If unspecified, 10 max will be
-            returned. Maximum value for limit can be 100
+          description: Number of Organizations to return
           schema:
             type: integer
             format: int32
@@ -317,9 +313,7 @@ paths:
             minimum: 0
         - in: query
           name: limit
-          description: >-
-            Number of Roles to return. If unspecified, 10 max will be returned.
-            Maximum value for limit can be 100
+          description: Number of Roles to return
           schema:
             type: integer
             format: int32

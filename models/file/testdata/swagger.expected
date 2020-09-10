@@ -55,30 +55,32 @@ paths:
               schema:
                 type: integer
                 format: int32
+            X-Next-After:
+              description: >-
+                The opaque token to set as "after" in the next query, to
+                continue getting results. If it isn't present, there is no more
+                data
+              schema:
+                type: string
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/DirectoryMultiResponse'
       parameters:
         - in: query
-          name: offset
+          name: after
           description: >-
-            Offset of the Directories (starting from 0) to include in the
-            response.
+            The value returned as X-Next-After in the previous query. Starts
+            from beginning if not specified
           schema:
-            type: integer
-            format: int32
-            default: 0
-            minimum: 0
+            type: string
         - in: query
           name: limit
-          description: >-
-            Number of Directories to return. If unspecified, 10 max will be
-            returned. Maximum value for limit can be 100
+          description: Number of Directories to return
           schema:
             type: integer
             format: int32
-            default: 10
+            default: 20
             minimum: 1
             maximum: 100
         - in: query
@@ -172,9 +174,7 @@ paths:
             minimum: 0
         - in: query
           name: limit
-          description: >-
-            Number of FileTypes to return. If unspecified, 10 max will be
-            returned. Maximum value for limit can be 100
+          description: Number of FileTypes to return
           schema:
             type: integer
             format: int32
@@ -303,9 +303,7 @@ paths:
             minimum: 0
         - in: query
           name: limit
-          description: >-
-            Number of Files to return. If unspecified, 10 max will be returned.
-            Maximum value for limit can be 100
+          description: Number of Files to return
           schema:
             type: integer
             format: int32
@@ -404,9 +402,7 @@ paths:
             minimum: 0
         - in: query
           name: limit
-          description: >-
-            Number of DirectoryDeleteRequests to return. If unspecified, 10 max
-            will be returned. Maximum value for limit can be 100
+          description: Number of DirectoryDeleteRequests to return
           schema:
             type: integer
             format: int32
