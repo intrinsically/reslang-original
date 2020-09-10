@@ -1,10 +1,12 @@
 # The Reslang Paradigm for API Creation
 
+## Resource Oriented & Automatic Standards
+
 Reslang provides an opinionated, resource oriented approach to APIs. In this paradigm, you have resources (and subresources) on the server and you can perform operations on them via the REST verbs - the famous uniform interface. i.e.you can GET a resource, use POST to create, PUT & PUT to update, and DELETE to delete.
 
 Why is our approach opinionated? Well, it biases away from HATEOAS towards a simpler more pragmatic view. References to other resources are represented by ids, rather than links. It also allows you to drop down into an OO paradigm of custom verbs / actions. Finally it enforces our standards on APIs, which are documented [here](./docs/LiveRampAPIStandards.pdf) - diverging from these is intentionally difficult simply because reslang encodes the standards automatically, you never need to even be concerned with them.
 
-## A Getout Clause: Escaping from Pure Resources
+## The Getout Clause: Escaping from Pure Resources
 
 The full vision of REST implies that applications hold state and push it down to servers as resources. However, in our experience, there are always times when the server has a set of long running requests, some of them asynchronous, that we need to model.
 
