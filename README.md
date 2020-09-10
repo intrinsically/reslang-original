@@ -32,7 +32,7 @@ Reslang is licensed under [Apache V2](https://www.apache.org/licenses/LICENSE-2.
 
 (This is the node.js stack - please see here for installation instructions: [node.js](https://nodejs.org/en/download/) & [yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable))
 
-2. clone the repo
+2. clone the reslang repo
 3. yarn install
 4. yarn jest
 
