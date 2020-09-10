@@ -1,7 +1,7 @@
 import { readFile } from "../parse"
 import { strip } from "./utilities"
 import { allModels } from "./allmodels"
-import JsonSchemaGen from "../jsonschemagen"
+import JsonSchemaGen from "../genjsonschema"
 
 /** dotviz generation tests
  */
@@ -38,7 +38,7 @@ function compare(
 ) {
     const schemaGen = new JsonSchemaGen(
         [`models/${module}`],
-        { ignoreRules: true },
+        { ignoreRules: true, pagination: "offset", limit: 10, maxLimit: 100 },
         "PROD",
         "",
         true,

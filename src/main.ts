@@ -12,7 +12,7 @@ import StripGen from "./genstripped"
 import SwagGen from "./genswagger"
 import { clean, readFile, writeFile } from "./parse"
 import { IRules } from "./rules"
-import JsonSchemaGen from "./jsonschemagen"
+import JsonSchemaGen from "./genjsonschema"
 const RULES = "rules.json"
 const LOCAL_RULES = lpath.join(__dirname, "library", RULES)
 

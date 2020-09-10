@@ -16,7 +16,7 @@ describe("event generation tests", () => {
 function compare(module: string) {
     const asyncapi = new EventsGen(
         [`models/${module}`],
-        { ignoreRules: true },
+        { ignoreRules: true, pagination: "offset", limit: 10, maxLimit: 100 },
         "PROD",
         "",
         true,
