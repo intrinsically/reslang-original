@@ -10,19 +10,20 @@ Reslang is licensed under [Apache V2](https://www.apache.org/licenses/LICENSE-2.
 
 ## Docs
 
-| Topic                                                | Description                                                                             |
-| ---------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| [Why reslang?](./docs/why.md)                        | Why do we need this tool and what does it offer?                                        |
-| [Intro tutorial](./docs/intro.md)                    | Describes making a toy API for manipulating files and directories.                      |
-| [The API paradigm](./docs/paradigm.md)               | What is the Reslang paradigm and how does it relate to REST, OO and RPC                 |
-| [Event intro tutorial](./docs/intro-events.md)       | Describes a simple example of how to generate AsyncAPI to describe events               |
-| [Sections](./docs/sections.md)                       | This explains how to reorder / group the presentation of your resources                 |
-| [Direct2Dist API](./docs/direct2dist-explanation.md) | This is a more complex example which recreates the entire Direct2Dist API.              |
-| [MULTI verbs](./docs/multi.md)                       | Describes MULTI- verbs such as MULTIPOST, MULTIPATCH etc                                |
-| [Reference manual](./docs/reference.md)              | This describes the syntax and features in more depth.                                   |
-| [Server blocks](./docs/server-blocks.md)             | This explains how to define servers for REST and events APIs                            |
-| [JSON schema generation](./docs/jsonschema.md)       | This explains how to generate JSON schema definitions from Reslang code                 |
-| [VSCode Syntax highlighting](./vscode/README.md)     | Explains how to install VSCode syntax highlighting. Hint search extensions for Reslang! |
+| Topic                                                    | Description                                                                                  |
+| -------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| [Why reslang?](./docs/why.md)                            | Why do we need this tool and what does it offer?                                             |
+| [Intro tutorial](./docs/intro.md)                        | Describes making a toy API for manipulating files and directories.                           |
+| [The API paradigm](./docs/paradigm.md)                   | What is the Reslang paradigm and how does it relate to REST, OO and RPC                      |
+| [Event intro tutorial](./docs/intro-events.md)           | Describes a simple example of how to generate AsyncAPI to describe events                    |
+| [Sections](./docs/sections.md)                           | This explains how to reorder / group the presentation of your resources                      |
+| [Direct2Dist API](./docs/direct2dist-explanation.md)     | This is a more complex example which recreates the entire Direct2Dist API.                   |
+| [MULTI verbs](./docs/multi.md)                           | Describes MULTI- verbs such as MULTIPOST, MULTIPATCH etc                                     |
+| [Reference manual](./docs/reference.md)                  | This describes the syntax and features in more depth.                                        |
+| [Server blocks](./docs/server-blocks.md)                 | This explains how to define servers for REST and events APIs                                 |
+| [JSON schema generation](./docs/jsonschema.md)           | This explains how to generate JSON schema definitions from Reslang code                      |
+| [Internal System Design](./docs/ReslangSystemDesign.pdf) | Explains how Reslang is structured as a typescript application, and how the transpiler works |
+| [VSCode Syntax highlighting](./vscode/README.md)         | Explains how to install VSCode syntax highlighting. Hint search extensions for Reslang!      |
 
 ## Installation
 
@@ -127,4 +128,3 @@ Reslang can produce a nice pretty-printed, stripped down version of the Reslang 
     ./reslang models/resources --stripped --open
 
 Will open a browser on the stripped down file. If you just want plain text, add --plain
-
