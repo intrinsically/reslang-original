@@ -3,7 +3,7 @@
     "namespace": [
       {
         "category": "namespace",
-        "comment": "New Onboarding API",
+        "comment": "Early exploration of the LiveRamp distribution API - very heavily superseded now",
         "title": "Distribution API",
         "version": "0.0.1"
       }

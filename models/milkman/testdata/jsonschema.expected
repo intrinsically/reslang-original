@@ -2,11 +2,11 @@
   "$id": "https://schemas.liveramp.com/noroot",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
-    "DeliverPurchasedSegmentsInput": {
+    "DeliverMilkInput": {
       "type": "object",
       "properties": {
-        "segmentsToDelivers": {
-          "description": "Link to Segment resources via their ids",
+        "milkToDelivers": {
+          "description": "Link to Milk resources via their ids",
           "items": {
             "type": "string"
           },
@@ -14,26 +14,26 @@
         },
         "whereToDeliver": {
           "type": "string",
-          "description": "Link to Destination resource via its id"
+          "description": "Link to Address resource via its id"
         },
         "complete": {
           "type": "boolean"
         }
       },
       "required": [
-        "segmentsToDeliver",
+        "milkToDeliver",
         "whereToDeliver",
         "complete"
       ]
     },
-    "DeliverPurchasedSegmentsOutput": {
+    "DeliverMilkOutput": {
       "type": "object",
       "properties": {
         "id": {
           "type": "string"
         },
-        "segmentsToDelivers": {
-          "description": "Link to Segment resources via their ids",
+        "milkToDelivers": {
+          "description": "Link to Milk resources via their ids",
           "items": {
             "type": "string"
           },
@@ -41,9 +41,9 @@
         },
         "whereToDeliver": {
           "type": "string",
-          "description": "Link to Destination resource via its id"
+          "description": "Link to Address resource via its id"
         },
-        "segmentStatuses": {
+        "milkStatuses": {
           "items": {
             "type": "object",
             "$ref": "#/definitions/DeliveryStatus"
@@ -56,25 +56,25 @@
       },
       "required": [
         "id",
-        "segmentsToDeliver",
+        "milkToDeliver",
         "whereToDeliver",
-        "segmentStatuses",
+        "milkStatuses",
         "complete"
       ]
     },
-    "DeliverPurchasedSegmentsMultiResponse": {
+    "DeliverMilkMultiResponse": {
       "type": "object",
       "properties": {
-        "deliverPurchasedSegments": {
-          "description": "Array of retrieved DeliverPurchasedSegments",
+        "deliverMilks": {
+          "description": "Array of retrieved DeliverMilks",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/DeliverPurchasedSegmentsOutput"
+            "$ref": "#/definitions/DeliverMilkOutput"
           }
         }
       }
     },
-    "BulksearchDeliverPurchasedSegmentsOutput": {
+    "BulksearchDeliverMilkOutput": {
       "type": "object",
       "properties": {
         "id": {
@@ -89,19 +89,19 @@
         "name"
       ]
     },
-    "BulksearchDeliverPurchasedSegmentsMultiResponse": {
+    "BulksearchDeliverMilkMultiResponse": {
       "type": "object",
       "properties": {
         "searches": {
-          "description": "Array of retrieved DeliverPurchasedSegments::searches",
+          "description": "Array of retrieved DeliverMilk::searches",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/BulksearchDeliverPurchasedSegmentsOutput"
+            "$ref": "#/definitions/BulksearchDeliverMilkOutput"
           }
         }
       }
     },
-    "BulksearchSegmentOutput": {
+    "BulksearchMilkOutput": {
       "type": "object",
       "properties": {
         "id": {
@@ -116,22 +116,22 @@
         "name"
       ]
     },
-    "BulksearchSegmentMultiResponse": {
+    "BulksearchMilkMultiResponse": {
       "type": "object",
       "properties": {
         "searches": {
-          "description": "Array of retrieved Segment::searches",
+          "description": "Array of retrieved Milk::searches",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/BulksearchSegmentOutput"
+            "$ref": "#/definitions/BulksearchMilkOutput"
           }
         }
       }
     },
-    "AllDeliveredSegmentsOutput": {
+    "AllDeliveredMilkOutput": {
       "type": "object",
       "properties": {
-        "segmentStatuses": {
+        "milkStatuses": {
           "items": {
             "type": "object",
             "$ref": "#/definitions/DeliveryStatus"
@@ -140,7 +140,7 @@
         }
       },
       "required": [
-        "segmentStatuses"
+        "milkStatuses"
       ]
     },
     "DeliveryStatus": {
@@ -151,9 +151,9 @@
           "format": "ISO8601 UTC date-time",
           "example": "2019-04-13T03:35:34Z"
         },
-        "segment": {
+        "milk": {
           "type": "string",
-          "description": "Link to Segment resource via its id"
+          "description": "Link to Milk resource via its id"
         },
         "status": {
           "$ref": "#/definitions/DeliveryStatusEnum",
@@ -162,7 +162,7 @@
       },
       "required": [
         "updated",
-        "segment",
+        "milk",
         "status"
       ]
     },

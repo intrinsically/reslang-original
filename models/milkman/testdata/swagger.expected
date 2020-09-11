@@ -1,35 +1,35 @@
 openapi: 3.0.1
 info:
-  title: Data buyer API
-  description: Data buyer API
+  title: Milk delivery example API
+  description: Milk delivery API
   version: 0.0.1
 servers:
   - description: ''
-    url: 'https://api.liveramp.com/databuyer'
+    url: 'https://api.liveramp.com/milkman'
 tags:
-  - name: DeliverPurchasedSegments
+  - name: DeliverMilk
     description: '(request)  '
-  - name: Bulk search DeliverPurchasedSegments
+  - name: Bulk search DeliverMilk
     description: '(bulk sync action)  '
-  - name: Bulk search Segment
+  - name: Bulk search Milk
     description: '(bulk sync action)  '
-  - name: AllDeliveredSegments
+  - name: AllDeliveredMilk
     description: '(resource)  '
 paths:
-  /v1/deliver-purchased-segments:
+  /v1/deliver-milks:
     post:
       tags:
-        - DeliverPurchasedSegments
-      operationId: Create DeliverPurchasedSegments
+        - DeliverMilk
+      operationId: Create DeliverMilk
       description: ''
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DeliverPurchasedSegmentsInput'
+              $ref: '#/components/schemas/DeliverMilkInput'
       responses:
         '201':
-          description: DeliverPurchasedSegments created successfully
+          description: DeliverMilk created successfully
           content:
             application/json:
               schema:
@@ -39,28 +39,28 @@ paths:
                     type: string
     get:
       tags:
-        - DeliverPurchasedSegments
-      operationId: Get multiple DeliverPurchasedSegments
+        - DeliverMilk
+      operationId: Get DeliverMilks
       description: ''
       responses:
         '200':
-          description: DeliverPurchasedSegments retrieved successfully
+          description: DeliverMilks retrieved successfully
           headers:
             X-Total-Count:
-              description: Total number of DeliverPurchasedSegments returned by the query
+              description: Total number of DeliverMilks returned by the query
               schema:
                 type: integer
                 format: int32
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DeliverPurchasedSegmentsMultiResponse'
+                $ref: '#/components/schemas/DeliverMilkMultiResponse'
       parameters:
         - in: query
           name: offset
           description: >-
-            Offset of the DeliverPurchasedSegments (starting from 0) to include
-            in the response.
+            Offset of the DeliverMilks (starting from 0) to include in the
+            response.
           schema:
             type: integer
             format: int32
@@ -68,7 +68,7 @@ paths:
             minimum: 0
         - in: query
           name: limit
-          description: Number of DeliverPurchasedSegments to return
+          description: Number of DeliverMilks to return
           schema:
             type: integer
             format: int32
@@ -80,21 +80,21 @@ paths:
           required: false
           schema:
             type: string
-  '/v1/deliver-purchased-segments/{id}':
+  '/v1/deliver-milks/{id}':
     get:
       tags:
-        - DeliverPurchasedSegments
-      operationId: Get DeliverPurchasedSegments
+        - DeliverMilk
+      operationId: Get DeliverMilk
       description: ''
       responses:
         '200':
-          description: DeliverPurchasedSegments retrieved successfully
+          description: DeliverMilk retrieved successfully
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DeliverPurchasedSegmentsOutput'
+                $ref: '#/components/schemas/DeliverMilkOutput'
         '404':
-          description: DeliverPurchasedSegments not found
+          description: DeliverMilk not found
           content:
             application/json:
               schema:
@@ -105,11 +105,11 @@ paths:
           required: true
           schema:
             type: string
-  /v1/deliver-purchased-segments/actions/search:
+  /v1/deliver-milks/actions/search:
     get:
       tags:
-        - Bulk search DeliverPurchasedSegments
-      operationId: 'Get Bulk DeliverPurchasedSegments::searches'
+        - Bulk search DeliverMilk
+      operationId: 'Get Bulk DeliverMilk::searches'
       description: ''
       responses:
         '200':
@@ -123,8 +123,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: >-
-                  #/components/schemas/BulksearchDeliverPurchasedSegmentsMultiResponse
+                $ref: '#/components/schemas/BulksearchDeliverMilkMultiResponse'
       parameters:
         - in: query
           name: offset
@@ -148,11 +147,11 @@ paths:
           required: false
           schema:
             type: string
-  /v1/segments/actions/search:
+  /v1/milks/actions/search:
     get:
       tags:
-        - Bulk search Segment
-      operationId: 'Get Bulk Segment::searches'
+        - Bulk search Milk
+      operationId: 'Get Bulk Milk::searches'
       description: ''
       responses:
         '200':
@@ -166,7 +165,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/BulksearchSegmentMultiResponse'
+                $ref: '#/components/schemas/BulksearchMilkMultiResponse'
       parameters:
         - in: query
           name: offset
@@ -190,21 +189,21 @@ paths:
           required: false
           schema:
             type: string
-  /v1/all-delivered-segments:
+  /v1/all-delivered-milk:
     get:
       tags:
-        - AllDeliveredSegments
-      operationId: Get AllDeliveredSegments
+        - AllDeliveredMilk
+      operationId: Get AllDeliveredMilk
       description: ''
       responses:
         '200':
-          description: AllDeliveredSegments retrieved successfully
+          description: AllDeliveredMilk retrieved successfully
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AllDeliveredSegmentsOutput'
+                $ref: '#/components/schemas/AllDeliveredMilkOutput'
         '404':
-          description: AllDeliveredSegments not found
+          description: AllDeliveredMilk not found
           content:
             application/json:
               schema:
@@ -212,37 +211,37 @@ paths:
 components:
   parameters: {}
   schemas:
-    DeliverPurchasedSegmentsInput:
+    DeliverMilkInput:
       type: object
       properties:
-        segmentsToDelivers:
-          description: Link to Segment resources via their ids
+        milkToDelivers:
+          description: Link to Milk resources via their ids
           items:
             type: string
           type: array
         whereToDeliver:
           type: string
-          description: Link to Destination resource via its id
+          description: Link to Address resource via its id
         complete:
           type: boolean
       required:
-        - segmentsToDeliver
+        - milkToDeliver
         - whereToDeliver
         - complete
-    DeliverPurchasedSegmentsOutput:
+    DeliverMilkOutput:
       type: object
       properties:
         id:
           type: string
-        segmentsToDelivers:
-          description: Link to Segment resources via their ids
+        milkToDelivers:
+          description: Link to Milk resources via their ids
           items:
             type: string
           type: array
         whereToDeliver:
           type: string
-          description: Link to Destination resource via its id
-        segmentStatuses:
+          description: Link to Address resource via its id
+        milkStatuses:
           items:
             allOf:
               - $ref: '#/components/schemas/DeliveryStatus'
@@ -252,19 +251,19 @@ components:
           type: boolean
       required:
         - id
-        - segmentsToDeliver
+        - milkToDeliver
         - whereToDeliver
-        - segmentStatuses
+        - milkStatuses
         - complete
-    DeliverPurchasedSegmentsMultiResponse:
+    DeliverMilkMultiResponse:
       type: object
       properties:
-        deliverPurchasedSegments:
-          description: Array of retrieved DeliverPurchasedSegments
+        deliverMilks:
+          description: Array of retrieved DeliverMilks
           type: array
           items:
-            $ref: '#/components/schemas/DeliverPurchasedSegmentsOutput'
-    BulksearchDeliverPurchasedSegmentsOutput:
+            $ref: '#/components/schemas/DeliverMilkOutput'
+    BulksearchDeliverMilkOutput:
       type: object
       properties:
         id:
@@ -274,15 +273,15 @@ components:
       required:
         - id
         - name
-    BulksearchDeliverPurchasedSegmentsMultiResponse:
+    BulksearchDeliverMilkMultiResponse:
       type: object
       properties:
         searches:
-          description: 'Array of retrieved DeliverPurchasedSegments::searches'
+          description: 'Array of retrieved DeliverMilk::searches'
           type: array
           items:
-            $ref: '#/components/schemas/BulksearchDeliverPurchasedSegmentsOutput'
-    BulksearchSegmentOutput:
+            $ref: '#/components/schemas/BulksearchDeliverMilkOutput'
+    BulksearchMilkOutput:
       type: object
       properties:
         id:
@@ -292,25 +291,25 @@ components:
       required:
         - id
         - name
-    BulksearchSegmentMultiResponse:
+    BulksearchMilkMultiResponse:
       type: object
       properties:
         searches:
-          description: 'Array of retrieved Segment::searches'
+          description: 'Array of retrieved Milk::searches'
           type: array
           items:
-            $ref: '#/components/schemas/BulksearchSegmentOutput'
-    AllDeliveredSegmentsOutput:
+            $ref: '#/components/schemas/BulksearchMilkOutput'
+    AllDeliveredMilkOutput:
       type: object
       properties:
-        segmentStatuses:
+        milkStatuses:
           items:
             allOf:
               - $ref: '#/components/schemas/DeliveryStatus'
             type: object
           type: array
       required:
-        - segmentStatuses
+        - milkStatuses
     DeliveryStatus:
       type: object
       properties:
@@ -318,16 +317,16 @@ components:
           type: string
           format: ISO8601 UTC date-time
           example: '2019-04-13T03:35:34Z'
-        segment:
+        milk:
           type: string
-          description: Link to Segment resource via its id
+          description: Link to Milk resource via its id
         status:
           allOf:
             - $ref: '#/components/schemas/DeliveryStatusEnum'
           type: string
       required:
         - updated
-        - segment
+        - milk
         - status
     DeliveryStatusEnum:
       type: string

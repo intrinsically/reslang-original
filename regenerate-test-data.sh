@@ -1,7 +1,26 @@
 #!/bin/bash
 
-apis=(edmissing multi gendiagram servers linked databuyer eventing dataset checkrules privacy optionality authorization complex-resource patchable direct2dist distribution file request simple-resource singleton stringmaps upversion multiplicity namespaces)
-
+apis=(
+    "authorization"
+    "checkrules"
+    "complex-resource"
+    "direct2dist"
+    "distribution"
+    "eventing"
+    "file"
+    "linked"
+    "milkman"
+    "multi"
+    "multiplicity"
+    "namespaces"
+    "optionality"
+    "patchable"
+    "request"
+    "servers"
+    "simple-resource"
+    "stringmaps"
+    "table"
+    "upversion")
 echo "Regenerating event files"
 echo "---"
     ./reslang --noversion --events --ignorerules ${apis[@]} --testdir ./models --testwrite ./testdata/asyncapi.expected

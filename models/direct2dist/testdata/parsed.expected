@@ -3,8 +3,8 @@
     "namespace": [
       {
         "category": "namespace",
-        "comment": "API for accessing LiveRamp's Direct to Distribution Service",
-        "title": "Direct to Distribution API - BETA ",
+        "comment": "Early prototype of the API for accessing LiveRamp's Direct to Distribution Service",
+        "title": "Direct to Distribution API - Alpha",
         "version": "0.0.1"
       }
     ],

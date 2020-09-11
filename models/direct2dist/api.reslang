@@ -1,6 +1,6 @@
 
-"API for accessing LiveRamp's Direct to Distribution Service"
+"Early prototype of the API for accessing LiveRamp's Direct to Distribution Service"
 namespace {
-    title "Direct to Distribution API - BETA "
+    title "Direct to Distribution API - Alpha"
     version 0.0.1
 }

@@ -13,15 +13,15 @@ describe("JSON schema generation tests", () => {
     // test with an actual root
     test("Structure root", () => {
         compare(
-            "gendiagram",
-            "SegmentDeliveryAttemptStats",
+            "direct2dist",
+            "BatchOutputMetadata",
             "jsonschema-structure.expected",
             false
         )
     })
     test("Structure root", () => {
         compare(
-            "gendiagram",
+            "direct2dist",
             "noroot",
             "jsonschema-structure-follow.expected",
             false

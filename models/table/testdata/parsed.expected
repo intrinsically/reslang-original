@@ -3,7 +3,7 @@
     "namespace": [
       {
         "category": "namespace",
-        "title": "Segment API - ALPHA",
+        "title": "Table / Column example we were playing around with",
         "version": "0.0.1"
       }
     ],
@@ -23,12 +23,559 @@
       {
         "category": "definition",
         "kind": "resource-like",
-        "future": true,
+        "future": false,
         "singleton": false,
-        "type": "resource",
+        "type": "subresource",
         "attributes": [
           {
             "name": "id",
+            "comment": "The id of the Column.",
+            "stringMap": false,
+            "type": {
+              "parents": [],
+              "short": "string",
+              "name": "string",
+              "parentShort": "",
+              "parentName": ""
+            },
+            "inline": false,
+            "linked": false,
+            "full": false,
+            "modifiers": {
+              "flag": false,
+              "mutable": false,
+              "optional": false,
+              "optionalPost": false,
+              "optionalPut": false,
+              "optionalGet": false,
+              "output": false,
+              "queryonly": false,
+              "query": false,
+              "representation": false
+            },
+            "constraints": {}
+          },
+          {
+            "name": "name",
+            "comment": "The name of the Column.",
+            "stringMap": false,
+            "type": {
+              "parents": [],
+              "short": "string",
+              "name": "string",
+              "parentShort": "",
+              "parentName": ""
+            },
+            "inline": false,
+            "linked": false,
+            "full": false,
+            "modifiers": {
+              "flag": false,
+              "mutable": false,
+              "optional": false,
+              "optionalPost": false,
+              "optionalPut": false,
+              "optionalGet": false,
+              "output": false,
+              "queryonly": false,
+              "query": false,
+              "representation": false
+            },
+            "constraints": {
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "type",
+            "comment": "The type of data that will be imported into column.\nNUMERIC: only numeric data/values can be added to this column.\nSTRING: any string data or values can be added to this column.",
+            "stringMap": false,
+            "type": {
+              "parents": [],
+              "short": "ColumnTypeEnum",
+              "name": "ColumnTypeEnum",
+              "parentShort": "",
+              "parentName": ""
+            },
+            "inline": false,
+            "linked": false,
+            "full": false,
+            "modifiers": {
+              "flag": false,
+              "mutable": false,
+              "optional": false,
+              "optionalPost": false,
+              "optionalPut": false,
+              "optionalGet": false,
+              "output": false,
+              "queryonly": false,
+              "query": false,
+              "representation": false
+            },
+            "constraints": {}
+          },
+          {
+            "name": "enumerated",
+            "comment": "Whether or not the columns's values are enumerated.",
+            "stringMap": false,
+            "type": {
+              "parents": [],
+              "short": "boolean",
+              "name": "boolean",
+              "parentShort": "",
+              "parentName": ""
+            },
+            "inline": false,
+            "linked": false,
+            "full": false,
+            "modifiers": {
+              "flag": false,
+              "mutable": false,
+              "optional": false,
+              "optionalPost": false,
+              "optionalPut": false,
+              "optionalGet": false,
+              "output": false,
+              "queryonly": false,
+              "query": false,
+              "representation": false
+            },
+            "constraints": {}
+          },
+          {
+            "name": "values",
+            "comment": "The list of enum values for the column\nThis is only allowed if enumerated==true",
+            "stringMap": false,
+            "type": {
+              "parents": [],
+              "short": "string",
+              "name": "string",
+              "parentShort": "",
+              "parentName": ""
+            },
+            "inline": false,
+            "array": {
+              "type": 1,
+              "min": 1
+            },
+            "linked": false,
+            "full": false,
+            "modifiers": {
+              "flag": false,
+              "mutable": true,
+              "optional": true,
+              "optionalPost": false,
+              "optionalPut": false,
+              "optionalGet": false,
+              "output": false,
+              "queryonly": false,
+              "query": false,
+              "representation": false
+            },
+            "constraints": {}
+          },
+          {
+            "name": "createdAt",
+            "comment": "Timestamp of when the column was first created.",
+            "stringMap": false,
+            "type": {
+              "parents": [],
+              "short": "datetime",
+              "name": "datetime",
+              "parentShort": "",
+              "parentName": ""
+            },
+            "inline": false,
+            "linked": false,
+            "full": false,
+            "modifiers": {
+              "flag": false,
+              "mutable": false,
+              "optional": false,
+              "optionalPost": false,
+              "optionalPut": false,
+              "optionalGet": false,
+              "output": true,
+              "queryonly": false,
+              "query": false,
+              "representation": false
+            },
+            "constraints": {}
+          },
+          {
+            "name": "updatedAt",
+            "comment": "Timestamp of the last time the Columns metadata was updated.",
+            "stringMap": false,
+            "type": {
+              "parents": [],
+              "short": "datetime",
+              "name": "datetime",
+              "parentShort": "",
+              "parentName": ""
+            },
+            "inline": false,
+            "linked": false,
+            "full": false,
+            "modifiers": {
+              "flag": false,
+              "mutable": false,
+              "optional": false,
+              "optionalPost": false,
+              "optionalPut": false,
+              "optionalGet": false,
+              "output": true,
+              "queryonly": false,
+              "query": false,
+              "representation": false
+            },
+            "constraints": {}
+          }
+        ],
+        "operations": [
+          {
+            "operation": "GET",
+            "comment": "Find a single existing column in the provided parent table",
+            "options": [],
+            "errors": [
+              {
+                "codes": [
+                  {
+                    "code": "404",
+                    "comment": "Cannot find resource"
+                  }
+                ],
+                "struct": {
+                  "parents": [],
+                  "short": "StandardError",
+                  "name": "StandardError",
+                  "parentShort": "",
+                  "parentName": ""
+                }
+              }
+            ]
+          },
+          {
+            "operation": "POST",
+            "comment": "Create a new column in the provided parent table.",
+            "options": [],
+            "errors": [
+              {
+                "codes": [
+                  {
+                    "code": "303",
+                    "comment": "A Column with the same type, enumerability, and name already exists in this Table"
+                  }
+                ],
+                "struct": {
+                  "parents": [],
+                  "short": "ColumnRedirection",
+                  "name": "ColumnRedirection",
+                  "parentShort": "",
+                  "parentName": ""
+                }
+              },
+              {
+                "codes": [
+                  {
+                    "code": "404",
+                    "comment": "Cannot find Table"
+                  }
+                ],
+                "struct": {
+                  "parents": [],
+                  "short": "StandardError",
+                  "name": "StandardError",
+                  "parentShort": "",
+                  "parentName": ""
+                }
+              },
+              {
+                "codes": [
+                  {
+                    "code": "422",
+                    "comment": "Input has invalid semantics"
+                  }
+                ],
+                "struct": {
+                  "parents": [],
+                  "short": "StandardError",
+                  "name": "StandardError",
+                  "parentShort": "",
+                  "parentName": ""
+                }
+              }
+            ]
+          },
+          {
+            "operation": "MULTIGET",
+            "comment": "Find existing column in the provided parent table",
+            "options": [],
+            "errors": [
+              {
+                "codes": [
+                  {
+                    "code": "404",
+                    "comment": "Cannot find table"
+                  }
+                ],
+                "struct": {
+                  "parents": [],
+                  "short": "StandardError",
+                  "name": "StandardError",
+                  "parentShort": "",
+                  "parentName": ""
+                }
+              }
+            ]
+          },
+          {
+            "operation": "PUT",
+            "comment": "Modify the attributes of a column in the provided parent table.\nCurrently the only supported operation is adding values to enumerated column.\nThe list of values passed in will be added to the column's existing set of values.",
+            "options": [],
+            "errors": [
+              {
+                "codes": [
+                  {
+                    "code": "422",
+                    "comment": "Input has invalid semantics"
+                  }
+                ],
+                "struct": {
+                  "parents": [],
+                  "short": "StandardError",
+                  "name": "StandardError",
+                  "parentShort": "",
+                  "parentName": ""
+                }
+              },
+              {
+                "codes": [
+                  {
+                    "code": "404",
+                    "comment": "Cannot find resource"
+                  }
+                ],
+                "struct": {
+                  "parents": [],
+                  "short": "StandardError",
+                  "name": "StandardError",
+                  "parentShort": "",
+                  "parentName": ""
+                }
+              }
+            ]
+          }
+        ],
+        "parents": [
+          "Table"
+        ],
+        "short": "Column",
+        "name": "Table::Column",
+        "parentShort": "Table",
+        "parentName": "Table",
+        "secondary": false,
+        "file": "column.reslang"
+      },
+      {
+        "category": "definition",
+        "kind": "resource-like",
+        "future": false,
+        "singleton": false,
+        "type": "action",
+        "async": false,
+        "attributes": [
+          {
+            "name": "id",
+            "stringMap": false,
+            "type": {
+              "parents": [],
+              "short": "int",
+              "name": "int",
+              "parentShort": "",
+              "parentName": ""
+            },
+            "inline": false,
+            "linked": false,
+            "full": false,
+            "modifiers": {
+              "flag": false,
+              "mutable": false,
+              "optional": false,
+              "optionalPost": false,
+              "optionalPut": false,
+              "optionalGet": false,
+              "output": false,
+              "queryonly": false,
+              "query": false,
+              "representation": false
+            },
+            "constraints": {}
+          }
+        ],
+        "operations": [
+          {
+            "operation": "POST",
+            "comment": "Marks a column as 'disabled', which means that it will no longer\nbe processed in the table and will no longer have stats calculated for it",
+            "options": [],
+            "errors": [
+              {
+                "codes": [
+                  {
+                    "code": "404",
+                    "comment": "Cannot find resource"
+                  }
+                ],
+                "struct": {
+                  "parents": [],
+                  "short": "StandardError",
+                  "name": "StandardError",
+                  "parentShort": "",
+                  "parentName": ""
+                }
+              }
+            ]
+          }
+        ],
+        "parents": [
+          "Table",
+          "Column"
+        ],
+        "short": "Disable",
+        "name": "Table::Column::Disable",
+        "parentShort": "Table",
+        "parentName": "Table::Column",
+        "secondary": false,
+        "file": "column.reslang"
+      },
+      {
+        "category": "definition",
+        "kind": "resource-like",
+        "future": false,
+        "singleton": false,
+        "type": "action",
+        "async": false,
+        "attributes": [
+          {
+            "name": "id",
+            "stringMap": false,
+            "type": {
+              "parents": [],
+              "short": "int",
+              "name": "int",
+              "parentShort": "",
+              "parentName": ""
+            },
+            "inline": false,
+            "linked": false,
+            "full": false,
+            "modifiers": {
+              "flag": false,
+              "mutable": false,
+              "optional": false,
+              "optionalPost": false,
+              "optionalPut": false,
+              "optionalGet": false,
+              "output": false,
+              "queryonly": false,
+              "query": false,
+              "representation": false
+            },
+            "constraints": {}
+          },
+          {
+            "name": "columns",
+            "comment": "IDs of columns to disable.",
+            "stringMap": false,
+            "type": {
+              "parents": [
+                "Table"
+              ],
+              "short": "Column",
+              "name": "Table::Column",
+              "parentShort": "Table",
+              "parentName": "Table"
+            },
+            "inline": false,
+            "array": {
+              "type": 2
+            },
+            "linked": true,
+            "full": false,
+            "modifiers": {
+              "flag": false,
+              "mutable": false,
+              "optional": false,
+              "optionalPost": false,
+              "optionalPut": false,
+              "optionalGet": false,
+              "output": false,
+              "queryonly": false,
+              "query": false,
+              "representation": false
+            },
+            "constraints": {}
+          }
+        ],
+        "operations": [
+          {
+            "operation": "POST",
+            "comment": "Marks the set of columns 'disabled', which means that they will no longer\nbe processed in the table\nand will no longer have stats calculated for them",
+            "options": [],
+            "errors": [
+              {
+                "codes": [
+                  {
+                    "code": "404",
+                    "comment": "Cannot find resource"
+                  }
+                ],
+                "struct": {
+                  "parents": [],
+                  "short": "StandardError",
+                  "name": "StandardError",
+                  "parentShort": "",
+                  "parentName": ""
+                }
+              }
+            ]
+          }
+        ],
+        "parents": [
+          "Table",
+          "Column"
+        ],
+        "short": "Disable",
+        "bulk": "bulk",
+        "name": "Table::Column::Disable",
+        "parentShort": "Table",
+        "parentName": "Table::Column",
+        "secondary": false,
+        "file": "column.reslang"
+      },
+      {
+        "category": "definition",
+        "kind": "enum",
+        "type": "enum",
+        "parents": [],
+        "short": "ColumnTypeEnum",
+        "literals": [
+          "STRING",
+          "NUMERIC"
+        ],
+        "name": "ColumnTypeEnum",
+        "parentShort": "",
+        "parentName": "",
+        "secondary": false,
+        "file": "column.reslang"
+      },
+      {
+        "category": "definition",
+        "kind": "structure",
+        "type": "structure",
+        "parents": [],
+        "short": "ColumnRedirection",
+        "attributes": [
+          {
+            "name": "existingColumnURL",
             "stringMap": false,
             "type": {
               "parents": [],
@@ -55,14 +602,11 @@
             "constraints": {}
           }
         ],
-        "parents": [],
-        "short": "Audience",
-        "name": "Audience",
+        "name": "ColumnRedirection",
         "parentShort": "",
         "parentName": "",
-        "namespace": "",
         "secondary": false,
-        "file": "dataset.reslang"
+        "file": "column.reslang"
       }
     ],
     "diagrams": [],
@@ -112,11 +656,10 @@
         "kind": "resource-like",
         "future": false,
         "singleton": false,
-        "type": "subresource",
+        "type": "resource",
         "attributes": [
           {
             "name": "id",
-            "comment": "The id of the Field.",
             "stringMap": false,
             "type": {
               "parents": [],
@@ -144,7 +687,6 @@
           },
           {
             "name": "name",
-            "comment": "The name of the Field.",
             "stringMap": false,
             "type": {
               "parents": [],
@@ -164,180 +706,6 @@
               "optionalPut": false,
               "optionalGet": false,
               "output": false,
-              "queryonly": false,
-              "query": false,
-              "representation": false
-            },
-            "constraints": {
-              "maxLength": 255
-            }
-          },
-          {
-            "name": "type",
-            "comment": "The type of data that will be imported into this field.\nNUMERIC: only numeric data/values can be added to this Field.\nSTRING: any string data or values can be added to this Field.",
-            "stringMap": false,
-            "type": {
-              "parents": [],
-              "short": "FieldTypeEnum",
-              "name": "FieldTypeEnum",
-              "parentShort": "",
-              "parentName": ""
-            },
-            "inline": false,
-            "linked": false,
-            "full": false,
-            "modifiers": {
-              "flag": false,
-              "mutable": false,
-              "optional": false,
-              "optionalPost": false,
-              "optionalPut": false,
-              "optionalGet": false,
-              "output": false,
-              "queryonly": false,
-              "query": false,
-              "representation": false
-            },
-            "constraints": {}
-          },
-          {
-            "name": "enumerated",
-            "comment": "Whether or not the Field's values are enumerated.",
-            "stringMap": false,
-            "type": {
-              "parents": [],
-              "short": "boolean",
-              "name": "boolean",
-              "parentShort": "",
-              "parentName": ""
-            },
-            "inline": false,
-            "linked": false,
-            "full": false,
-            "modifiers": {
-              "flag": false,
-              "mutable": false,
-              "optional": false,
-              "optionalPost": false,
-              "optionalPut": false,
-              "optionalGet": false,
-              "output": false,
-              "queryonly": false,
-              "query": false,
-              "representation": false
-            },
-            "constraints": {}
-          },
-          {
-            "name": "valueCollectionType",
-            "comment": "Determines how the set of values for this Field should be maintained\nfor each audience key that this Field is associated with.\nSINGLETON: only store the value most recently imported for this audience key.\nSET: store all values at most once that were imported for this audience key.\nMULTISET: store all values imported for this audience key potentially duplicate times.",
-            "stringMap": false,
-            "type": {
-              "parents": [],
-              "short": "ValueCollectionTypeEnum",
-              "name": "ValueCollectionTypeEnum",
-              "parentShort": "",
-              "parentName": ""
-            },
-            "inline": false,
-            "linked": false,
-            "full": false,
-            "modifiers": {
-              "flag": false,
-              "mutable": false,
-              "optional": false,
-              "optionalPost": false,
-              "optionalPut": false,
-              "optionalGet": false,
-              "output": false,
-              "queryonly": false,
-              "query": false,
-              "representation": false
-            },
-            "constraints": {}
-          },
-          {
-            "name": "values",
-            "comment": "The list of enum values for the Field.\nThis is only allowed if enumerated==true for the Field.",
-            "stringMap": false,
-            "type": {
-              "parents": [],
-              "short": "string",
-              "name": "string",
-              "parentShort": "",
-              "parentName": ""
-            },
-            "inline": false,
-            "array": {
-              "type": 1,
-              "min": 1
-            },
-            "linked": false,
-            "full": false,
-            "modifiers": {
-              "flag": false,
-              "mutable": true,
-              "optional": true,
-              "optionalPost": false,
-              "optionalPut": false,
-              "optionalGet": false,
-              "output": false,
-              "queryonly": false,
-              "query": false,
-              "representation": false
-            },
-            "constraints": {}
-          },
-          {
-            "name": "createdAt",
-            "comment": "Timestamp of when the Field was first created.",
-            "stringMap": false,
-            "type": {
-              "parents": [],
-              "short": "datetime",
-              "name": "datetime",
-              "parentShort": "",
-              "parentName": ""
-            },
-            "inline": false,
-            "linked": false,
-            "full": false,
-            "modifiers": {
-              "flag": false,
-              "mutable": false,
-              "optional": false,
-              "optionalPost": false,
-              "optionalPut": false,
-              "optionalGet": false,
-              "output": true,
-              "queryonly": false,
-              "query": false,
-              "representation": false
-            },
-            "constraints": {}
-          },
-          {
-            "name": "updatedAt",
-            "comment": "Timestamp of the last time the Field's metadata was updated.",
-            "stringMap": false,
-            "type": {
-              "parents": [],
-              "short": "datetime",
-              "name": "datetime",
-              "parentShort": "",
-              "parentName": ""
-            },
-            "inline": false,
-            "linked": false,
-            "full": false,
-            "modifiers": {
-              "flag": false,
-              "mutable": false,
-              "optional": false,
-              "optionalPost": false,
-              "optionalPut": false,
-              "optionalGet": false,
-              "output": true,
               "queryonly": false,
               "query": false,
               "representation": false
@@ -347,398 +715,34 @@
         ],
         "operations": [
           {
-            "operation": "GET",
-            "comment": "Find a single existing Field in the provided parent Audience.\nNote: this only works for core fields (raw string, raw numeric, string enum, and numeric enum).\nAll fields of other types will not be included in the response.",
+            "operation": "POST",
             "options": [],
-            "errors": [
-              {
-                "codes": [
-                  {
-                    "code": "404",
-                    "comment": "Cannot find resource"
-                  }
-                ],
-                "struct": {
-                  "parents": [],
-                  "short": "StandardError",
-                  "name": "StandardError",
-                  "parentShort": "",
-                  "parentName": ""
-                }
-              }
-            ]
+            "errors": []
           },
           {
-            "operation": "POST",
-            "comment": "Create a new Field in the provided parent Audience.",
+            "operation": "GET",
             "options": [],
-            "errors": [
-              {
-                "codes": [
-                  {
-                    "code": "303",
-                    "comment": "A Field with the same type, enumerability, and name already exists in this Audience"
-                  }
-                ],
-                "struct": {
-                  "parents": [],
-                  "short": "FieldRedirection",
-                  "name": "FieldRedirection",
-                  "parentShort": "",
-                  "parentName": ""
-                }
-              },
-              {
-                "codes": [
-                  {
-                    "code": "404",
-                    "comment": "Cannot find Audience"
-                  }
-                ],
-                "struct": {
-                  "parents": [],
-                  "short": "StandardError",
-                  "name": "StandardError",
-                  "parentShort": "",
-                  "parentName": ""
-                }
-              },
-              {
-                "codes": [
-                  {
-                    "code": "422",
-                    "comment": "Input has invalid semantics"
-                  }
-                ],
-                "struct": {
-                  "parents": [],
-                  "short": "StandardError",
-                  "name": "StandardError",
-                  "parentShort": "",
-                  "parentName": ""
-                }
-              }
-            ]
+            "errors": []
           },
           {
             "operation": "MULTIGET",
-            "comment": "Find existing Fields in the provided parent Audience.\nNote: this only works for core fields (raw string, raw numeric, string enum, and numeric enum).\nAll fields of other types will not be included in the response.",
             "options": [],
-            "errors": [
-              {
-                "codes": [
-                  {
-                    "code": "404",
-                    "comment": "Cannot find Audience"
-                  }
-                ],
-                "struct": {
-                  "parents": [],
-                  "short": "StandardError",
-                  "name": "StandardError",
-                  "parentShort": "",
-                  "parentName": ""
-                }
-              }
-            ]
+            "errors": []
           },
           {
-            "operation": "PUT",
-            "comment": "Modify the attributes of a Field in the provided parent Audience.\nCurrently the only supported operation is adding values to enumerated Fields.\nThe list of values passed in will be added to the Field's existing set of values.",
+            "operation": "DELETE",
             "options": [],
-            "errors": [
-              {
-                "codes": [
-                  {
-                    "code": "422",
-                    "comment": "Input has invalid semantics"
-                  }
-                ],
-                "struct": {
-                  "parents": [],
-                  "short": "StandardError",
-                  "name": "StandardError",
-                  "parentShort": "",
-                  "parentName": ""
-                }
-              },
-              {
-                "codes": [
-                  {
-                    "code": "404",
-                    "comment": "Cannot find resource"
-                  }
-                ],
-                "struct": {
-                  "parents": [],
-                  "short": "StandardError",
-                  "name": "StandardError",
-                  "parentShort": "",
-                  "parentName": ""
-                }
-              }
-            ]
+            "errors": []
           }
         ],
-        "parents": [
-          "Audience"
-        ],
-        "short": "Field",
-        "name": "Audience::Field",
-        "parentShort": "Audience",
-        "parentName": "Audience",
-        "secondary": false,
-        "file": "field.reslang"
-      },
-      {
-        "category": "definition",
-        "kind": "resource-like",
-        "future": false,
-        "singleton": false,
-        "type": "action",
-        "async": false,
-        "attributes": [
-          {
-            "name": "id",
-            "stringMap": false,
-            "type": {
-              "parents": [],
-              "short": "int",
-              "name": "int",
-              "parentShort": "",
-              "parentName": ""
-            },
-            "inline": false,
-            "linked": false,
-            "full": false,
-            "modifiers": {
-              "flag": false,
-              "mutable": false,
-              "optional": false,
-              "optionalPost": false,
-              "optionalPut": false,
-              "optionalGet": false,
-              "output": false,
-              "queryonly": false,
-              "query": false,
-              "representation": false
-            },
-            "constraints": {}
-          }
-        ],
-        "operations": [
-          {
-            "operation": "POST",
-            "comment": "Marks a Field as 'disabled', which means that it will no longer\nbe processed in the audience, will no longer be deliverable,\nand will no longer have stats calculated for it.\nNote: this only works for core fields (raw string, raw numeric, string enum, and numeric enum).\nAttempting to disable any other type of field will trigger a 404 Not Found response.",
-            "options": [],
-            "errors": [
-              {
-                "codes": [
-                  {
-                    "code": "404",
-                    "comment": "Cannot find resource"
-                  }
-                ],
-                "struct": {
-                  "parents": [],
-                  "short": "StandardError",
-                  "name": "StandardError",
-                  "parentShort": "",
-                  "parentName": ""
-                }
-              }
-            ]
-          }
-        ],
-        "parents": [
-          "Audience",
-          "Field"
-        ],
-        "short": "Disable",
-        "name": "Audience::Field::Disable",
-        "parentShort": "Audience",
-        "parentName": "Audience::Field",
-        "secondary": false,
-        "file": "field.reslang"
-      },
-      {
-        "category": "definition",
-        "kind": "resource-like",
-        "future": false,
-        "singleton": false,
-        "type": "action",
-        "async": false,
-        "attributes": [
-          {
-            "name": "id",
-            "stringMap": false,
-            "type": {
-              "parents": [],
-              "short": "int",
-              "name": "int",
-              "parentShort": "",
-              "parentName": ""
-            },
-            "inline": false,
-            "linked": false,
-            "full": false,
-            "modifiers": {
-              "flag": false,
-              "mutable": false,
-              "optional": false,
-              "optionalPost": false,
-              "optionalPut": false,
-              "optionalGet": false,
-              "output": false,
-              "queryonly": false,
-              "query": false,
-              "representation": false
-            },
-            "constraints": {}
-          },
-          {
-            "name": "fieldIDs",
-            "comment": "IDs of Fields to disable.",
-            "stringMap": false,
-            "type": {
-              "parents": [
-                "Audience"
-              ],
-              "short": "Field",
-              "name": "Audience::Field",
-              "parentShort": "Audience",
-              "parentName": "Audience"
-            },
-            "inline": false,
-            "array": {
-              "type": 2
-            },
-            "linked": true,
-            "full": false,
-            "modifiers": {
-              "flag": false,
-              "mutable": false,
-              "optional": false,
-              "optionalPost": false,
-              "optionalPut": false,
-              "optionalGet": false,
-              "output": false,
-              "queryonly": false,
-              "query": false,
-              "representation": false
-            },
-            "constraints": {}
-          }
-        ],
-        "operations": [
-          {
-            "operation": "POST",
-            "comment": "Marks the set of input Fields 'disabled', which means that they will no longer\nbe processed in the audience, will no longer be deliverable,\nand will no longer have stats calculated for them.\nNote: this only works for core fields (raw string, raw numeric, string enum, and numeric enum).\nAttempting to disable any other type of field will trigger a 404 Not Found response.",
-            "options": [],
-            "errors": [
-              {
-                "codes": [
-                  {
-                    "code": "404",
-                    "comment": "Cannot find resource"
-                  }
-                ],
-                "struct": {
-                  "parents": [],
-                  "short": "StandardError",
-                  "name": "StandardError",
-                  "parentShort": "",
-                  "parentName": ""
-                }
-              }
-            ]
-          }
-        ],
-        "parents": [
-          "Audience",
-          "Field"
-        ],
-        "short": "Disable",
-        "bulk": "bulk",
-        "name": "Audience::Field::Disable",
-        "parentShort": "Audience",
-        "parentName": "Audience::Field",
-        "secondary": false,
-        "file": "field.reslang"
-      },
-      {
-        "category": "definition",
-        "kind": "enum",
-        "type": "enum",
         "parents": [],
-        "short": "FieldTypeEnum",
-        "literals": [
-          "STRING",
-          "NUMERIC"
-        ],
-        "name": "FieldTypeEnum",
+        "short": "Table",
+        "name": "Table",
         "parentShort": "",
         "parentName": "",
+        "namespace": "",
         "secondary": false,
-        "file": "field.reslang"
-      },
-      {
-        "category": "definition",
-        "kind": "enum",
-        "type": "enum",
-        "parents": [],
-        "short": "ValueCollectionTypeEnum",
-        "literals": [
-          "SINGLETON",
-          "SET",
-          "MULTISET"
-        ],
-        "name": "ValueCollectionTypeEnum",
-        "parentShort": "",
-        "parentName": "",
-        "secondary": false,
-        "file": "field.reslang"
-      },
-      {
-        "category": "definition",
-        "kind": "structure",
-        "type": "structure",
-        "parents": [],
-        "short": "FieldRedirection",
-        "attributes": [
-          {
-            "name": "existingFieldURL",
-            "stringMap": false,
-            "type": {
-              "parents": [],
-              "short": "string",
-              "name": "string",
-              "parentShort": "",
-              "parentName": ""
-            },
-            "inline": false,
-            "linked": false,
-            "full": false,
-            "modifiers": {
-              "flag": false,
-              "mutable": false,
-              "optional": false,
-              "optionalPost": false,
-              "optionalPut": false,
-              "optionalGet": false,
-              "output": false,
-              "queryonly": false,
-              "query": false,
-              "representation": false
-            },
-            "constraints": {}
-          }
-        ],
-        "name": "FieldRedirection",
-        "parentShort": "",
-        "parentName": "",
-        "secondary": false,
-        "file": "field.reslang"
+        "file": "table.reslang"
       }
     ],
     "diagrams": [],

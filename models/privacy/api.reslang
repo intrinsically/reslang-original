@@ -1,6 +1,0 @@
-
-"API for retrieving consent files"
-namespace {
-    title "Consent file API - BETA "
-    version 0.0.1
-}

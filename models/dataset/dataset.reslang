@@ -1,4 +1,0 @@
-
-future resource Audience {
-  id: string
-}

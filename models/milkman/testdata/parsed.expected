@@ -3,8 +3,8 @@
     "namespace": [
       {
         "category": "namespace",
-        "comment": "Data buyer API",
-        "title": "Data buyer API",
+        "comment": "Milk delivery API",
+        "title": "Milk delivery example API",
         "version": "0.0.1"
       }
     ],
@@ -56,12 +56,12 @@
             "constraints": {}
           },
           {
-            "name": "segmentsToDeliver",
+            "name": "milkToDeliver",
             "stringMap": false,
             "type": {
               "parents": [],
-              "short": "Segment",
-              "name": "Segment",
+              "short": "Milk",
+              "name": "Milk",
               "parentShort": "",
               "parentName": ""
             },
@@ -90,8 +90,8 @@
             "stringMap": false,
             "type": {
               "parents": [],
-              "short": "Destination",
-              "name": "Destination",
+              "short": "Address",
+              "name": "Address",
               "parentShort": "",
               "parentName": ""
             },
@@ -113,7 +113,7 @@
             "constraints": {}
           },
           {
-            "name": "segmentStatuses",
+            "name": "milkStatuses",
             "stringMap": false,
             "type": {
               "parents": [],
@@ -196,8 +196,8 @@
           }
         ],
         "parents": [],
-        "short": "DeliverPurchasedSegments",
-        "name": "DeliverPurchasedSegments",
+        "short": "DeliverMilk",
+        "name": "DeliverMilk",
         "parentShort": "",
         "parentName": "",
         "namespace": "",
@@ -275,13 +275,13 @@
           }
         ],
         "parents": [
-          "DeliverPurchasedSegments"
+          "DeliverMilk"
         ],
         "short": "search",
         "bulk": "bulk",
-        "name": "DeliverPurchasedSegments::search",
-        "parentShort": "DeliverPurchasedSegments",
-        "parentName": "DeliverPurchasedSegments",
+        "name": "DeliverMilk::search",
+        "parentShort": "DeliverMilk",
+        "parentName": "DeliverMilk",
         "secondary": false,
         "file": "delivery.reslang"
       },
@@ -356,13 +356,13 @@
           }
         ],
         "parents": [
-          "Segment"
+          "Milk"
         ],
         "short": "search",
         "bulk": "bulk",
-        "name": "Segment::search",
-        "parentShort": "Segment",
-        "parentName": "Segment",
+        "name": "Milk::search",
+        "parentShort": "Milk",
+        "parentName": "Milk",
         "secondary": false,
         "file": "delivery.reslang"
       },
@@ -374,7 +374,7 @@
         "type": "resource",
         "attributes": [
           {
-            "name": "segmentStatuses",
+            "name": "milkStatuses",
             "stringMap": false,
             "type": {
               "parents": [],
@@ -412,8 +412,8 @@
           }
         ],
         "parents": [],
-        "short": "AllDeliveredSegments",
-        "name": "AllDeliveredSegments",
+        "short": "AllDeliveredMilk",
+        "name": "AllDeliveredMilk",
         "parentShort": "",
         "parentName": "",
         "namespace": "",
@@ -455,12 +455,12 @@
             "constraints": {}
           },
           {
-            "name": "segment",
+            "name": "milk",
             "stringMap": false,
             "type": {
               "parents": [],
-              "short": "Segment",
-              "name": "Segment",
+              "short": "Milk",
+              "name": "Milk",
               "parentShort": "",
               "parentName": ""
             },
@@ -568,8 +568,8 @@
           }
         ],
         "parents": [],
-        "short": "Segment",
-        "name": "Segment",
+        "short": "Milk",
+        "name": "Milk",
         "parentShort": "",
         "parentName": "",
         "namespace": "",
@@ -612,8 +612,8 @@
           }
         ],
         "parents": [],
-        "short": "Destination",
-        "name": "Destination",
+        "short": "Address",
+        "name": "Address",
         "parentShort": "",
         "parentName": "",
         "namespace": "",

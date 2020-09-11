@@ -1,7 +1,9 @@
 openapi: 3.0.1
 info:
-  title: 'Direct to Distribution API - BETA '
-  description: API for accessing LiveRamp's Direct to Distribution Service
+  title: Direct to Distribution API - Alpha
+  description: >-
+    Early prototype of the API for accessing LiveRamp's Direct to Distribution
+    Service
   version: 0.0.1
 servers:
   - description: ''

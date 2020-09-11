@@ -1,7 +1,7 @@
 asyncapi: 2.0.0
 info:
-  title: Data buyer API
-  description: Data buyer API
+  title: Milk delivery example API
+  description: Milk delivery API
   version: 0.0.1
 servers:
   PROD:
@@ -10,26 +10,26 @@ servers:
     description: Production Google Pubsub server
 defaultContentType: application/json
 channels:
-  topics/databuyer.v1-deliver-purchased-segments-resource:
+  topics/milkman.v1-deliver-milk-resource:
     description: no documentation
     subscribe:
-      summary: 'REST: DeliverPurchasedSegments'
-      operationId: DeliverPurchasedSegments
+      summary: 'REST: DeliverMilk'
+      operationId: DeliverMilk
       message:
-        $ref: '#/components/messages/DeliverPurchasedSegments'
+        $ref: '#/components/messages/DeliverMilk'
 components:
   messages:
-    DeliverPurchasedSegments:
-      name: DeliverPurchasedSegments
-      title: DeliverPurchasedSegments
+    DeliverMilk:
+      name: DeliverMilk
+      title: DeliverMilk
       summary: ''
       contentType: application/json
       traits:
-        - $ref: '#/components/messageTraits/DeliverPurchasedSegmentsHeader'
+        - $ref: '#/components/messageTraits/DeliverMilkHeader'
       payload:
-        $ref: '#/components/schemas/DeliverPurchasedSegmentsOutput'
+        $ref: '#/components/schemas/DeliverMilkOutput'
   schemas:
-    DeliverPurchasedSegmentsHeader:
+    DeliverMilkHeader:
       type: object
       properties:
         verb:
@@ -52,20 +52,20 @@ components:
         - verb
         - location
         - ids
-    DeliverPurchasedSegmentsOutput:
+    DeliverMilkOutput:
       type: object
       properties:
         id:
           type: string
-        segmentsToDelivers:
-          description: Link to Segment resources via their ids
+        milkToDelivers:
+          description: Link to Milk resources via their ids
           items:
             type: string
           type: array
         whereToDeliver:
           type: string
-          description: Link to Destination resource via its id
-        segmentStatuses:
+          description: Link to Address resource via its id
+        milkStatuses:
           items:
             type: object
             $ref: '#/components/schemas/DeliveryStatus'
@@ -74,9 +74,9 @@ components:
           type: boolean
       required:
         - id
-        - segmentsToDeliver
+        - milkToDeliver
         - whereToDeliver
-        - segmentStatuses
+        - milkStatuses
         - complete
     DeliveryStatus:
       type: object
@@ -85,15 +85,15 @@ components:
           type: string
           format: ISO8601 UTC date-time
           example: '2019-04-13T03:35:34Z'
-        segment:
+        milk:
           type: string
-          description: Link to Segment resource via its id
+          description: Link to Milk resource via its id
         status:
           $ref: '#/components/schemas/DeliveryStatusEnum'
           type: string
       required:
         - updated
-        - segment
+        - milk
         - status
     DeliveryStatusEnum:
       type: string
@@ -102,7 +102,7 @@ components:
         - DELIVERED
         - ERROR
   messageTraits:
-    DeliverPurchasedSegmentsHeader:
+    DeliverMilkHeader:
       headers:
         type: object
         properties:
