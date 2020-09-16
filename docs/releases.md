@@ -1,3 +1,7 @@
+## 2.2.5 9/16/2020
+
+Now installable as a cmd line tool. Please follow the installation instructions, or run ./install-reslang to create links
+
 ## 2.0.0 8/23/2020
 
 Fixed up inlining of attributes in unions, aligned now with treatment of structures.
