@@ -1,3 +1,5 @@
+#!/usr/bin/env ts-node
+
 import clip from "clipboardy"
 import yaml from "js-yaml"
 import tmp from "tmp"
@@ -16,10 +18,11 @@ import JsonSchemaGen from "./genjsonschema"
 const RULES = "rules.json"
 const LOCAL_RULES = lpath.join(__dirname, "library", RULES)
 
-export const VERSION = "v2.2.4"
+export const VERSION = "v2.2.5"
 
 // parse the cmd line
 const args = yargs
+    .version(VERSION)
     .usage("Usage: reslang namespace_directory [focus.reslang]*")
     .option("diagram", {
         type: "string",

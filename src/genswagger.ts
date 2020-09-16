@@ -702,7 +702,7 @@ export default class SwagGen extends BaseGen {
         }
         const sane = camelCase(this.formSingleUniqueName(el))
         if (ops.get) {
-            const responses = {
+            const responses: any = {
                 200: {
                     description: short + " retrieved successfully",
                     content: this.empty.has(sane + "Output")

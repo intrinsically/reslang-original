@@ -27,7 +27,7 @@ Reslang is licensed under [Apache V2](https://www.apache.org/licenses/LICENSE-2.
 
 ## Installation
 
-### For local development on Reslang
+### For local use
 
 1. ensure node & yarn are installed
 
@@ -35,13 +35,15 @@ Reslang is licensed under [Apache V2](https://www.apache.org/licenses/LICENSE-2.
 
 2. clone the reslang repo
 3. yarn install
-4. yarn jest
+4. ./install-reslang
+
+Note that step 4 installs it as a command line tool using "yarn link"
 
 ## Running
 
 Test it out by typing:
 
-    ./reslang
+    reslang
 
 This should bring up the options.
 
@@ -85,17 +87,17 @@ Note that the models directory has a set of example definitions.
 
 The following copies the swagger to the clipboard and opens the ReDoc browser for you.
 
-    ./reslang models/simple-resource --open
+    reslang models/simple-resource --open
 
 If you want just want to print to stdout use:
 
-    ./reslang models/simple-resource --stdout
+    reslang models/simple-resource --stdout
 
 ## Viewing Swagger / OpenAPI in Swagger editor
 
 If you want to use the Swagger editor, add --web to the cmd line:
 
-    ./reslang models/simple-resource --open --web
+    reslang models/simple-resource --open --web
 
 Then paste the clipboard into the left window pane of the editor.
 
@@ -105,7 +107,7 @@ Reslang can generate dotviz output, which provides a nice graphical view of the 
 
 The following command will copy the dotviz output to the clipboard.
 
-    ./reslang models/simple-resource --open --diagram main
+    reslang models/simple-resource --open --diagram main
 
 This will open your browser at a nice graphviz online editor. Paste the clipboard into the editor and you will get your graphical view of your API - a resource diagram.
 
@@ -113,11 +115,11 @@ This will open your browser at a nice graphviz online editor. Paste the clipboar
 
 Reslang can generate AsyncAPI, describing the events a REST API can generate. It also provides an "event" keyword which you can use to describe adhoc events.
 
-    ./reslang models/eventing --open --events
+    reslang models/eventing --open --events
 
 If instead you wish to view the events in the AsyncAPI Playgrounder for editing, please add the --web option.
 
-    ./reslang models/eventing --open --events --web
+    reslang models/eventing --open --events --web
 
 Note that the AsyncAPI spec has been copied to the clipboard - you will need to paste it into the opened editor, on the left.
 
@@ -125,6 +127,6 @@ Note that the AsyncAPI spec has been copied to the clipboard - you will need to 
 
 Reslang can produce a nice pretty-printed, stripped down version of the Reslang in html. It is often easier to review this form, as it removes the comments and error structures.
 
-    ./reslang models/resources --stripped --open
+    reslang models/resources --stripped --open
 
 Will open a browser on the stripped down file. If you just want plain text, add --plain
