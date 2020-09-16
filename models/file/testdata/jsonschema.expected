@@ -54,14 +54,35 @@
           "type": "string"
         },
         "specId": {
+          "description": "this is a specification. comment override",
+          "type": "string"
+        },
+        "specId2": {
           "type": "string",
           "description": "Link to Specification resource via its id"
+        },
+        "specId3s": {
+          "description": "array override",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "specId4s": {
+          "description": "Link to Specification resources via their ids",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
         }
       },
       "required": [
         "type",
         "format",
-        "specId"
+        "specId",
+        "specId2",
+        "specId3",
+        "specId4"
       ],
       "description": "This configures up a file type, e.g. .gif"
     },
@@ -78,15 +99,36 @@
           "type": "string"
         },
         "specId": {
+          "description": "this is a specification. comment override",
+          "type": "string"
+        },
+        "specId2": {
           "type": "string",
           "description": "Link to Specification resource via its id"
+        },
+        "specId3s": {
+          "description": "array override",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "specId4s": {
+          "description": "Link to Specification resources via their ids",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
         }
       },
       "required": [
         "id",
         "type",
         "format",
-        "specId"
+        "specId",
+        "specId2",
+        "specId3",
+        "specId4"
       ],
       "description": "This configures up a file type, e.g. .gif"
     },

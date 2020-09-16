@@ -6,7 +6,7 @@
       "type": "object",
       "properties": {
         "destinationEndpointId": {
-          "description": "Link to Destination::Endpoint resource via [destinationId, endpointId]",
+          "description": "Reference to a destination's endpoints to be used for distributing the data",
           "items": {
             "type": "integer",
             "format": "int32"
@@ -51,7 +51,7 @@
           "type": "string"
         },
         "destinationEndpointId": {
-          "description": "Link to Destination::Endpoint resource via [destinationId, endpointId]",
+          "description": "Reference to a destination's endpoints to be used for distributing the data",
           "items": {
             "type": "integer",
             "format": "int32"

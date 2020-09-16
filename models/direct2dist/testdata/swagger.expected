@@ -316,8 +316,8 @@ components:
       properties:
         destinationEndpointId:
           description: >-
-            Link to Destination::Endpoint resource via [destinationId,
-            endpointId]
+            Reference to a destination's endpoints to be used for distributing
+            the data
           items:
             type: integer
             format: int32
@@ -394,8 +394,8 @@ components:
           type: string
         destinationEndpointId:
           description: >-
-            Link to Destination::Endpoint resource via [destinationId,
-            endpointId]
+            Reference to a destination's endpoints to be used for distributing
+            the data
           items:
             type: integer
             format: int32

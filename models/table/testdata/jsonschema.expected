@@ -114,7 +114,7 @@
       "type": "object",
       "properties": {
         "columns": {
-          "description": "Link to Table::Column resources via [tableId, columnId]",
+          "description": "IDs of columns to disable.",
           "items": {
             "items": {
               "type": "string"

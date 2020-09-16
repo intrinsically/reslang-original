@@ -1227,13 +1227,13 @@ Actions cannot have subresources`
             this.pushArrayDown(schema, count + 1, count + 1)
         }
 
-        if (attr.array) {
+        if (attr.array && !schema.description) {
             schema.description =
                 `Link to ${attr.type.name} resources via ` +
                 (count
                     ? "[" + ids + lowercaseFirst(def.short) + "Id]"
                     : "their ids")
-        } else {
+        } else if (!schema.description) {
             schema.description =
                 `Link to ${attr.type.name} resource via ` +
                 (count

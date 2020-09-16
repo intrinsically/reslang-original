@@ -24,7 +24,14 @@ resource FileType {
 	id: string
 	type: string query
 	format: string
+	"this is a specification. comment override"
 	specId: linked Specification
+	// no override
+	specId2: linked Specification
+	"array override"
+	specId3: linked Specification[]
+	// no array override
+	specId4: linked Specification[]
 	/operations
 		"Get a FileType"
 		GET 

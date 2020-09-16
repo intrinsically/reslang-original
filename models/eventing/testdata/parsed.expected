@@ -1076,6 +1076,7 @@
           },
           {
             "name": "specId",
+            "comment": "this is a specification. comment override",
             "stringMap": false,
             "type": {
               "parents": [],
@@ -1085,6 +1086,94 @@
               "parentName": ""
             },
             "inline": false,
+            "linked": true,
+            "full": false,
+            "modifiers": {
+              "flag": false,
+              "mutable": false,
+              "optional": false,
+              "optionalPost": false,
+              "optionalPut": false,
+              "optionalGet": false,
+              "output": false,
+              "queryonly": false,
+              "query": false,
+              "representation": false
+            },
+            "constraints": {}
+          },
+          {
+            "name": "specId2",
+            "stringMap": false,
+            "type": {
+              "parents": [],
+              "short": "Specification",
+              "name": "file.Specification",
+              "parentShort": "",
+              "parentName": ""
+            },
+            "inline": false,
+            "linked": true,
+            "full": false,
+            "modifiers": {
+              "flag": false,
+              "mutable": false,
+              "optional": false,
+              "optionalPost": false,
+              "optionalPut": false,
+              "optionalGet": false,
+              "output": false,
+              "queryonly": false,
+              "query": false,
+              "representation": false
+            },
+            "constraints": {}
+          },
+          {
+            "name": "specId3",
+            "comment": "array override",
+            "stringMap": false,
+            "type": {
+              "parents": [],
+              "short": "Specification",
+              "name": "file.Specification",
+              "parentShort": "",
+              "parentName": ""
+            },
+            "inline": false,
+            "array": {
+              "type": 2
+            },
+            "linked": true,
+            "full": false,
+            "modifiers": {
+              "flag": false,
+              "mutable": false,
+              "optional": false,
+              "optionalPost": false,
+              "optionalPut": false,
+              "optionalGet": false,
+              "output": false,
+              "queryonly": false,
+              "query": false,
+              "representation": false
+            },
+            "constraints": {}
+          },
+          {
+            "name": "specId4",
+            "stringMap": false,
+            "type": {
+              "parents": [],
+              "short": "Specification",
+              "name": "file.Specification",
+              "parentShort": "",
+              "parentName": ""
+            },
+            "inline": false,
+            "array": {
+              "type": 2
+            },
             "linked": true,
             "full": false,
             "modifiers": {

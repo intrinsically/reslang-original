@@ -54,6 +54,9 @@ digraph G {
                     <table border="1" cellborder="0" cellspacing="1"   >
                     <tr><td><b>Header        </b></td></tr>        <hr/><tr><td align="left">a: int</td></tr><tr><td align="left">b: long</td></tr></table> >];
 "file.FileType" -> "file.Specification" [label=< <font point-size="8"> specId</font> > arrowhead="vee"];
+"file.FileType" -> "file.Specification" [label=< <font point-size="8"> specId2</font> > arrowhead="vee"];
+"file.FileType" -> "file.Specification" [label=< <font point-size="8"> specId3[]</font> > arrowhead="vee"];
+"file.FileType" -> "file.Specification" [label=< <font point-size="8"> specId4[]</font> > arrowhead="vee"];
 "file.Directory::File" -> "file.FileType" [label=< <font point-size="8"> fileTypeId</font> > arrowhead="vee"];
 "file.DirectoryDeleteRequest" -> "file.Directory" [label=< <font point-size="8"> directoryId</font> > arrowhead="vee"];
 "file.DirectoryDeleteIncomplete" -> "file.Directory" [label=< <font point-size="8"> directory</font> > arrowhead="vee"];
